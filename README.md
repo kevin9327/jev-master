@@ -38,7 +38,7 @@ All three mix in a **single** `POST https://api.typesafe.ai/v1/systemone`. Code 
 Python 3.10+. Get a TypeSafe key from the [dashboard](https://console.typesafe.ai/settings/keys) and export it as `TYPESAFE_API_KEY` (never commit it).
 
 ```bash
-git clone https://github.com/<you>/jev-master
+git clone https://github.com/kevin9327/jev-master
 cd jev-master
 python -m pip install -e ".[dev]"
 python -m pytest
