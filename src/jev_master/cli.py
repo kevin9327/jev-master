@@ -15,7 +15,7 @@ from jev_master.apps.ticket_router import SAMPLE_STATE as TICKET_STATE
 from jev_master.apps.ticket_router import run_ticket
 from jev_master.key import load_api_key
 
-APPS = ("ticket", "gate", "pitch", "browser")
+APPS = ("ticket", "gate", "pitch", "browser", "catalog")
 
 
 def _read_state(path: str | None, default: str) -> str:
@@ -39,12 +39,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--state", help="Path to a text/JSON state file")
     parser.add_argument("--text", help="Inline state text")
     parser.add_argument("--port", type=int, default=8765, help="JevBrowser bind port")
+    parser.add_argument("--kind", help="catalog kind filter (sdk, browser, app, ...)")
     args = parser.parse_args(argv)
 
     if args.app == "browser":
         from jev_master.apps.jev_browser import main as browser_main
 
         return browser_main(["--port", str(args.port)])
+
+    if args.app == "catalog":
+        from jev_master.catalog import main as catalog_main
+
+        extra: list[str] = []
+        if args.kind:
+            extra.extend(["--kind", args.kind])
+        return catalog_main(extra)
 
     if args.text:
         state = args.text

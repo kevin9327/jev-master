@@ -54,6 +54,7 @@ python -m jev_master ticket --state examples/stripe-ticket.txt   # intent routin
 python -m jev_master gate --state examples/voice-command.txt     # confidence gate
 python -m jev_master pitch --state examples/pitch.txt            # composite score
 python -m jev_master browser                                     # JevBrowser on :8765
+python -m jev_master catalog                                     # cited field map (not clones)
 ```
 
 Or from the app folders:
@@ -101,19 +102,30 @@ One mixed request asks department (Choice), frustration (Score), and urgency (No
 
 The API key is runtime-only. This tree gitignores `.env`, `jevkey.txt`, and TypeSafe key files. Do not paste keys into README, tests, or screenshots.
 
-## Cited Jev / TypeSafe repos
+## Field map (GitHub + X, cited not cloned)
 
-Read as references; **not vendored** into this tree:
+awesome-jev lists are link directories. **jev-master ships the runnable compose layer** (live `POST /v1/systemone`, mixed Choice+Score+Noul, tests, JevBrowser) and **indexes the rest of the field** without vendoring it. Star rank is not a claim.
 
-- [typesafe-ai/typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) — official Python SDK
-- [typesafe-ai/typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) — official JS SDK
-- [typesafe-ai/system-one-adapter-python](https://github.com/typesafe-ai/system-one-adapter-python) — LLM adapter for comparison
-- [typesafe-ai/skills](https://github.com/typesafe-ai/skills) — agent skill
-- [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) — curated Jev projects
-- [hellogumbo/awesome-jev](https://github.com/hellogumbo/awesome-jev) — searchable directory
-- [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) — evidence-backed use cases
-- [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) — Jev-picked browser actions
-- [AbdelStark/awesome-typesafe](https://github.com/AbdelStark/awesome-typesafe) — official + community index
+| What they are | What this repo is |
+| --- | --- |
+| [cobanov/awesome-jev](https://github.com/cobanov/awesome-jev) — curated links | Live client + composers you can run |
+| [hellogumbo/awesome-jev](https://github.com/hellogumbo/awesome-jev) — 400+ directory | Pattern-tagged index in [`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md) |
+| [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) — use-case notes | Intent routing / confidence gate / composite score as launchable apps |
+
+Surveyed from those lists plus official SDKs and X (`@typesafeai`, Browser Use ultrafast, jev-trader, neo4jev roundups). Full JSON: [`docs/ecosystem.json`](docs/ecosystem.json). Print it:
+
+```bash
+python -m jev_master catalog
+python -m jev_master catalog --kind browser
+```
+
+Headline citations (not copied into this tree):
+
+- Official: [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) · [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) · [skills](https://github.com/typesafe-ai/skills)
+- Agents: [foreman](https://github.com/thruwire/foreman) · [winnow](https://github.com/GhalebDweikat/winnow) · [hermes-jev](https://github.com/keeltrace/hermes-jev)
+- Browser: [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) · [typesafe-computer-use](https://github.com/awlevin/typesafe-computer-use)
+- Apps: [neo4jev](https://github.com/jexp/neo4jev) · [jev-trader](https://github.com/jarrodwatts/jev-trader) · [killmyidea](https://github.com/monteduro/killmyidea)
+- Research: [openjev](https://github.com/TheoLeeCJ/openjev) · [jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench)
 
 Docs: [Introduction](https://docs.typesafe.ai/introduction) · [API](https://docs.typesafe.ai/api) · [Patterns](https://docs.typesafe.ai/patterns)
 
