@@ -1,0 +1,5 @@
+Pitch: Relays is a marketplace that matches independent HVAC techs with
+building managers in rust-belt cities. We have 40 paying buildings in
+Cleveland, $18k MRR, and a two-sided waitlist in Detroit. Moat is local
+dispatch density plus a licensed-tech network, not a model. Raising a
+$1.2M pre-seed to hire two ops leads and expand to Pittsburgh.

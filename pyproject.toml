@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jev-master"
+version = "0.1.0"
+description = "Typed System One decisions with Jev: mix Choice, Score, and Noul, then compose routes, gates, and scores in code."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "jev-master contributors" }]
+keywords = ["jev", "typesafe", "system-one", "choice", "score", "noul"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+render = ["pillow>=10.0"]
+
+[project.scripts]
+jev-master = "jev_master.cli:main"
+jev-ticket = "jev_master.apps.ticket_router:main"
+jev-gate = "jev_master.apps.confidence_gate:main"
+jev-pitch = "jev_master.apps.pitch_score:main"
+jev-browser = "jev_master.apps.jev_browser:main"
+
+[project.urls]
+Documentation = "https://docs.typesafe.ai/introduction"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

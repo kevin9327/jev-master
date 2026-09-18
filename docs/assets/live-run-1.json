@@ -1,0 +1,49 @@
+{
+  "app": "ticket_router",
+  "pattern": "intent-routing",
+  "model": "jev-1.13.0",
+  "state": "Hi, I've been trying to connect my Stripe account for 3 days and it keeps failing. I'm losing sales. Please help ASAP.",
+  "answers": {
+    "department": {
+      "type": "choice",
+      "choice": "billing",
+      "probabilities": {
+        "billing": 0.66,
+        "sales": 0.0,
+        "technical": 0.34
+      },
+      "confidence": 0.49
+    },
+    "frustration": {
+      "type": "score",
+      "score": 1.0,
+      "legend": {
+        "0": "Calm, just stating facts",
+        "1": "Frustrated but civil",
+        "2": "Very angry, strong language"
+      },
+      "probabilities": {
+        "0": 0.0,
+        "1": 1.0,
+        "2": 0.0
+      },
+      "confidence": 1.0
+    },
+    "is_urgent": {
+      "type": "noul",
+      "noul": 0.99
+    }
+  },
+  "decision": {
+    "department": "billing",
+    "action": "escalate",
+    "handler": "human_triage",
+    "urgency": 0.99,
+    "frustration": 1.0,
+    "confidence": 0.49
+  },
+  "usage": {
+    "input_tokens": 448,
+    "output_tokens": 73
+  }
+}
