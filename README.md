@@ -66,6 +66,9 @@ Or from the app folders:
 python -m apps.ticket_router --state examples/stripe-ticket.txt
 python -m apps.confidence_gate --state examples/voice-command.txt
 python -m apps.pitch_score --state examples/pitch.txt
+python -m apps.jev_bot --state examples/stripe-ticket.txt
+python -m apps.jev_harness --state examples/rm-step.json
+python -m apps.jev_code --state examples/risky.diff
 python -m apps.jev_browser
 ```
 

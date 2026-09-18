@@ -136,5 +136,5 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 
 ## What jev-master adds
 
-Link directories stop at the URL. This repo ships a live `POST /v1/systemone` client, mixed Choice+Score+Noul, three compose apps, JevBrowser, and tests on the shipped builder — then points at the rest of the field.
+Link directories stop at the URL. This repo ships a live `POST /v1/systemone` client, mixed Choice+Score+Noul, compose apps (ticket/gate/pitch plus JevBot/JevHarness/JevCode), JevBrowser, and tests on the shipped builders — then points at the rest of the field.
 

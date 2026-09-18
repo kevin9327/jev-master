@@ -37,3 +37,5 @@ def test_render_markdown_says_cited_not_cloned() -> None:
     assert "POST /v1/systemone" in text or "v1/systemone" in text or "compose" in text
     assert "https://github.com/typesafe-ai/typesafe-sdk-python" in text
     assert "https://github.com/browser-use/jev-ultrafast" in text
+    assert "JevBot" in text and "JevHarness" in text and "JevCode" in text
+    assert "three compose apps" not in text

@@ -2,8 +2,22 @@
 
 from __future__ import annotations
 
+from jev_master.apps.confidence_gate import gate_questions
+from jev_master.apps.jev_bot import bot_questions
+from jev_master.apps.jev_code import code_questions
+from jev_master.apps.jev_harness import harness_questions
+from jev_master.apps.pitch_score import pitch_questions
 from jev_master.apps.ticket_router import mixed_ticket_questions
 from jev_master.client import DEFAULT_MODEL, SYSTEMONE_URL, build_systemone_payload
+
+FAMILY_BUILDERS = (
+    mixed_ticket_questions,
+    gate_questions,
+    pitch_questions,
+    bot_questions,
+    harness_questions,
+    code_questions,
+)
 
 
 def test_systemone_url_and_model() -> None:
@@ -34,3 +48,12 @@ def test_payload_preserves_state_and_question_ids() -> None:
     payload = build_systemone_payload({"ticket": "help"}, questions)
     assert payload["state"] == {"ticket": "help"}
     assert set(payload["questions"]) == {"department", "frustration", "is_urgent"}
+
+
+def test_family_builders_mix_choice_score_noul() -> None:
+    for builder in FAMILY_BUILDERS:
+        payload = build_systemone_payload("state", builder())
+        types = {item["type"] for item in payload["questions"].values()}
+        assert types == {"choice", "score", "noul"}, builder.__name__
+        assert payload["model"] == "jev-latest"
+        assert payload["model"] == DEFAULT_MODEL

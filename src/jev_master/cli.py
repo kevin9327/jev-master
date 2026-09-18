@@ -1,4 +1,4 @@
-"""North-star CLI: python -m jev_master [ticket|gate|pitch|browser]."""
+"""North-star CLI: python -m jev_master [ticket|gate|pitch|bot|harness|code]."""
 
 from __future__ import annotations
 
@@ -21,7 +21,8 @@ from jev_master.apps.ticket_router import SAMPLE_STATE as TICKET_STATE
 from jev_master.apps.ticket_router import run_ticket
 from jev_master.key import load_api_key
 
-APPS = ("ticket", "gate", "pitch", "browser", "catalog", "bot", "harness", "code")
+COMPOSE_APPS = ("ticket", "gate", "pitch", "bot", "harness", "code")
+APPS = COMPOSE_APPS + ("browser", "catalog")
 
 
 def _read_state(path: str | None, default: str) -> str:
