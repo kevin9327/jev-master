@@ -9,13 +9,19 @@ from pathlib import Path
 
 from jev_master.apps.confidence_gate import SAMPLE_STATE as GATE_STATE
 from jev_master.apps.confidence_gate import run_gate
+from jev_master.apps.jev_bot import SAMPLE_STATE as BOT_STATE
+from jev_master.apps.jev_bot import run_bot
+from jev_master.apps.jev_code import SAMPLE_STATE as CODE_STATE
+from jev_master.apps.jev_code import run_code
+from jev_master.apps.jev_harness import SAMPLE_STATE as HARNESS_STATE
+from jev_master.apps.jev_harness import run_harness
 from jev_master.apps.pitch_score import SAMPLE_STATE as PITCH_STATE
 from jev_master.apps.pitch_score import run_pitch
 from jev_master.apps.ticket_router import SAMPLE_STATE as TICKET_STATE
 from jev_master.apps.ticket_router import run_ticket
 from jev_master.key import load_api_key
 
-APPS = ("ticket", "gate", "pitch", "browser", "catalog")
+APPS = ("ticket", "gate", "pitch", "browser", "catalog", "bot", "harness", "code")
 
 
 def _read_state(path: str | None, default: str) -> str:
@@ -55,22 +61,29 @@ def main(argv: list[str] | None = None) -> int:
             extra.extend(["--kind", args.kind])
         return catalog_main(extra)
 
+    defaults = {
+        "ticket": TICKET_STATE,
+        "gate": GATE_STATE,
+        "pitch": PITCH_STATE,
+        "bot": BOT_STATE,
+        "harness": HARNESS_STATE,
+        "code": CODE_STATE,
+    }
     if args.text:
         state = args.text
-    elif args.app == "ticket":
-        state = _read_state(args.state, TICKET_STATE)
-    elif args.app == "gate":
-        state = _read_state(args.state, GATE_STATE)
     else:
-        state = _read_state(args.state, PITCH_STATE)
+        state = _read_state(args.state, defaults[args.app])
 
     key = load_api_key()
-    if args.app == "ticket":
-        payload = run_ticket(state, api_key=key)
-    elif args.app == "gate":
-        payload = run_gate(state, api_key=key)
-    else:
-        payload = run_pitch(state, api_key=key)
+    runners = {
+        "ticket": run_ticket,
+        "gate": run_gate,
+        "pitch": run_pitch,
+        "bot": run_bot,
+        "harness": run_harness,
+        "code": run_code,
+    }
+    payload = runners[args.app](state, api_key=key)
 
     json.dump(payload, sys.stdout, indent=2)
     sys.stdout.write("\n")

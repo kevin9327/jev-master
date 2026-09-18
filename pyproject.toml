@@ -29,6 +29,9 @@ jev-gate = "jev_master.apps.confidence_gate:main"
 jev-pitch = "jev_master.apps.pitch_score:main"
 jev-browser = "jev_master.apps.jev_browser:main"
 jev-catalog = "jev_master.catalog:main"
+jev-bot = "jev_master.apps.jev_bot:main"
+jev-harness = "jev_master.apps.jev_harness:main"
+jev-code = "jev_master.apps.jev_code:main"
 
 [project.urls]
 Documentation = "https://docs.typesafe.ai/introduction"

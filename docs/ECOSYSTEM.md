@@ -4,7 +4,7 @@ This file is an index of public Jev / TypeSafe System One work.
 **We do not vendor, mirror, or submodule these repositories.**
 Star counts and trending rank are not claimed.
 
-Surveyed GitHub awesome-jev lists, official TypeSafe repos, and X posts about Jev/System One · 84 cited entries · 2026-09-18.
+Surveyed GitHub awesome-jev lists, official TypeSafe repos, and X posts about Jev/System One · 88 cited entries · 2026-09-18.
 
 Sources we read (still not copied into this tree):
 
@@ -48,6 +48,8 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 
 ## Agents, gates, MCP
 
+- [jev-harness](https://github.com/kevin9327/jev-harness) `confidence-gate` — Tool-call execute/confirm/reject gate
+- [jev-code](https://github.com/kevin9327/jev-code) `confidence-gate` — Diff merge/comment/block gate
 - [foreman](https://github.com/thruwire/foreman) `confidence-gate` — Supervisor keeps coding agents on task · [X](https://x.com/JoshARosen/status/2100573432089866717)
 - [jev-review](https://github.com/devagrawal09/jev-review) `intent-routing` — Staged code-review workflow
 - [winnow](https://github.com/GhalebDweikat/winnow) `confidence-gate` — Judge tool results before context
@@ -76,6 +78,8 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 
 ## Applications
 
+- [jev-master](https://github.com/kevin9327/jev-master) `catalog` — This monorepo: live compose apps + field map
+- [jev-bot](https://github.com/kevin9327/jev-bot) `intent-routing` — Canned-reply support bot, not a chatbot
 - [neo4jev](https://github.com/jexp/neo4jev) `fan-out` — Graph hop Choice + Noul per step · [X](https://x.com/0xLogicrw/status/2100478725393686556)
 - [jev-trader](https://github.com/jarrodwatts/jev-trader) `intent-routing` — One trade decision per Monad block · [X](https://x.com/jarrodwatts/status/2100356151468585346)
 - [HA-Jev](https://github.com/AboveColin/HA-Jev) `other` — Home Assistant entities from Jev

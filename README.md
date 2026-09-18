@@ -55,6 +55,9 @@ python -m jev_master gate --state examples/voice-command.txt     # confidence ga
 python -m jev_master pitch --state examples/pitch.txt            # composite score
 python -m jev_master browser                                     # JevBrowser on :8765
 python -m jev_master catalog                                     # cited field map (not clones)
+python -m jev_master bot --state examples/stripe-ticket.txt      # JevBot canned replies
+python -m jev_master harness --state examples/rm-step.json       # JevHarness tool gate
+python -m jev_master code --state examples/risky.diff            # JevCode merge gate
 ```
 
 Or from the app folders:
@@ -74,6 +77,12 @@ python -m apps.jev_browser
 | [`apps/confidence_gate`](apps/confidence_gate) | [Confidence-gated routing](https://docs.typesafe.ai/patterns/confidence-routing) | act / confirm / escalate |
 | [`apps/pitch_score`](apps/pitch_score) | [Composite scoring](https://docs.typesafe.ai/patterns/composite-scoring) | weighted 0–1 score + verdict |
 | [`apps/jev_browser`](apps/jev_browser) | Playground in the browser | inspect probabilities + the same composers |
+| [`apps/jev_bot`](apps/jev_bot) | Support bot (not a chat LLM) | canned `reply` / `escalate` / `block` |
+| [`apps/jev_harness`](apps/jev_harness) | Agent tool-call harness | `execute` / `confirm` / `reject` |
+| [`apps/jev_code`](apps/jev_code) | Diff merge gate | `merge` / `comment` / `block` |
+
+Sibling GitHub repos (same ideas, standalone packages):
+[jev-bot](https://github.com/kevin9327/jev-bot) · [jev-harness](https://github.com/kevin9327/jev-harness) · [jev-code](https://github.com/kevin9327/jev-code)
 
 Atomic questions, then weights and thresholds in Python. If priorities change, change a coefficient — do not rewrite a prompt.
 

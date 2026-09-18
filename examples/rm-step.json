@@ -1,0 +1,5 @@
+{
+  "goal": "Summarize README.md",
+  "tool": "delete_file",
+  "args": {"path": "src/jev_master/cli.py"}
+}

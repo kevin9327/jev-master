@@ -19,6 +19,10 @@
     {"name": "system-one-adapter-python", "url": "https://github.com/typesafe-ai/system-one-adapter-python", "kind": "official", "pattern": "client", "note": "LLM adapter for comparison"},
     {"name": "typesafe-ai/skills", "url": "https://github.com/typesafe-ai/skills", "kind": "official", "pattern": "other", "note": "Official agent skill"},
     {"name": "TypeSafe launch post", "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev", "kind": "official", "pattern": "catalog", "note": "System One + Jev announcement"},
+    {"name": "jev-master", "url": "https://github.com/kevin9327/jev-master", "kind": "app", "pattern": "catalog", "note": "This monorepo: live compose apps + field map"},
+    {"name": "jev-bot", "url": "https://github.com/kevin9327/jev-bot", "kind": "app", "pattern": "intent-routing", "note": "Canned-reply support bot, not a chatbot"},
+    {"name": "jev-harness", "url": "https://github.com/kevin9327/jev-harness", "kind": "agent", "pattern": "confidence-gate", "note": "Tool-call execute/confirm/reject gate"},
+    {"name": "jev-code", "url": "https://github.com/kevin9327/jev-code", "kind": "agent", "pattern": "confidence-gate", "note": "Diff merge/comment/block gate"},
 
     {"name": "jevclient", "url": "https://github.com/AboveColin/jevclient", "kind": "sdk", "pattern": "client", "note": "Async Python client"},
     {"name": "jevgo", "url": "https://github.com/fgn/jevgo", "kind": "sdk", "pattern": "client", "note": "Go client + optional Langfuse"},
