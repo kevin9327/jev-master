@@ -11,10 +11,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_catalog_has_many_unique_github_citations() -> None:
     data = load_catalog()
-    urls = github_urls(data)
-    assert len(data["entries"]) >= 60
-    assert len(urls) >= 50
+    urls = [str(entry.get("url") or "") for entry in data["entries"]]
+    github = github_urls(data)
+    assert len(data["entries"]) > 88
     assert len(set(urls)) == len(urls)
+    assert len(github) >= 50
+    assert len(set(github)) == len(github)
+    assert any("github.com/" in url for url in urls)
+    assert any("x.com/" in url for url in urls)
     kinds = {entry["kind"] for entry in data["entries"]}
     for required in ("official", "sdk", "agent", "browser", "app", "game", "research", "list", "x"):
         assert required in kinds
@@ -22,6 +26,11 @@ def test_catalog_has_many_unique_github_citations() -> None:
     assert "intent-routing" in patterns
     assert "confidence-gate" in patterns
     assert "composite-score" in patterns
+    # 2026-09-19 harvest: previously missing user repo + new GitHub and X citations
+    assert "https://github.com/kevin9327/jev-visual" in urls
+    assert "https://github.com/githubnext/localjev" in urls
+    assert "https://x.com/typesafeai/status/2100747035746193598" in urls
+    assert "https://x.com/CompleteSkeptic/status/2099925682726002904" in urls
 
 
 def test_catalog_does_not_clone_other_repos() -> None:
@@ -29,6 +38,13 @@ def test_catalog_does_not_clone_other_repos() -> None:
         assert not (ROOT / name).exists()
     nested = [path for path in ROOT.rglob(".git") if path != ROOT / ".git"]
     assert nested == []
+    assert not (ROOT / ".gitmodules").exists()
+    # Shipped catalog is docs/ecosystem.json, not a vendored copy of other trees
+    shipped = ROOT / "docs" / "ecosystem.json"
+    assert shipped.is_file()
+    assert load_catalog()["entries"] is not None
+    text = shipped.read_text(encoding="utf-8")
+    assert "https://github.com/kevin9327/jev-visual" in text
 
 
 def test_render_markdown_says_cited_not_cloned() -> None:

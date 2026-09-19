@@ -79,5 +79,6 @@ def test_catalog_cites_sibling_family_repos() -> None:
         "https://github.com/kevin9327/jev-harness",
         "https://github.com/kevin9327/jev-code",
         "https://github.com/kevin9327/jev-master",
+        "https://github.com/kevin9327/jev-visual",
     ):
         assert url in urls

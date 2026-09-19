@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-18",
-  "surveyed": "GitHub awesome-jev lists, official TypeSafe repos, and X posts about Jev/System One",
+  "date": "2026-09-19",
+  "surveyed": "GitHub awesome-jev lists, GitHub search (jev typesafe / openjev / user jev-*), official TypeSafe repos/docs/providers, and X posts about Jev/System One",
   "method": "Citations only. No git clone, submodule, or vendor copy of other projects.",
   "sources": [
     "https://github.com/cobanov/awesome-jev",
@@ -10,104 +10,2338 @@
     "https://github.com/Anil-matcha/awesome-jev-by-typesafe",
     "https://github.com/typesafe-ai/typesafe-sdk-python",
     "https://docs.typesafe.ai/introduction",
-    "https://x.com/typesafeai"
+    "https://x.com/typesafeai",
+    "https://github.com/kevin9327/jev-visual",
+    "https://x.com/CompleteSkeptic/status/2099925682726002904",
+    "https://github.com/githubnext/localjev"
   ],
   "entries": [
-    {"name": "TypeSafe docs", "url": "https://docs.typesafe.ai/introduction", "kind": "official", "pattern": "catalog", "note": "Jev intro, primitives, POST /v1/systemone"},
-    {"name": "typesafe-sdk-python", "url": "https://github.com/typesafe-ai/typesafe-sdk-python", "kind": "official", "pattern": "client", "note": "Official Python SDK"},
-    {"name": "typesafe-sdk-js", "url": "https://github.com/typesafe-ai/typesafe-sdk-js", "kind": "official", "pattern": "client", "note": "Official TypeScript/JS SDK"},
-    {"name": "system-one-adapter-python", "url": "https://github.com/typesafe-ai/system-one-adapter-python", "kind": "official", "pattern": "client", "note": "LLM adapter for comparison"},
-    {"name": "typesafe-ai/skills", "url": "https://github.com/typesafe-ai/skills", "kind": "official", "pattern": "other", "note": "Official agent skill"},
-    {"name": "TypeSafe launch post", "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev", "kind": "official", "pattern": "catalog", "note": "System One + Jev announcement"},
-    {"name": "jev-master", "url": "https://github.com/kevin9327/jev-master", "kind": "app", "pattern": "catalog", "note": "This monorepo: live compose apps + field map"},
-    {"name": "jev-bot", "url": "https://github.com/kevin9327/jev-bot", "kind": "app", "pattern": "intent-routing", "note": "Canned-reply support bot, not a chatbot"},
-    {"name": "jev-harness", "url": "https://github.com/kevin9327/jev-harness", "kind": "agent", "pattern": "confidence-gate", "note": "Tool-call execute/confirm/reject gate"},
-    {"name": "jev-code", "url": "https://github.com/kevin9327/jev-code", "kind": "agent", "pattern": "confidence-gate", "note": "Diff merge/comment/block gate"},
-
-    {"name": "jevclient", "url": "https://github.com/AboveColin/jevclient", "kind": "sdk", "pattern": "client", "note": "Async Python client"},
-    {"name": "jevgo", "url": "https://github.com/fgn/jevgo", "kind": "sdk", "pattern": "client", "note": "Go client + optional Langfuse"},
-    {"name": "jev-go", "url": "https://github.com/Gaurav-Gosain/jev-go", "kind": "sdk", "pattern": "client", "note": "Go System One client"},
-    {"name": "typesafe-go", "url": "https://github.com/zhirschtritt/typesafe-go", "kind": "sdk", "pattern": "client", "note": "Idiomatic Go SDK"},
-    {"name": "typesafe-rs", "url": "https://github.com/AbdelStark/typesafe-rs", "kind": "sdk", "pattern": "client", "note": "Latency-first Rust SDK"},
-    {"name": "s1-rs", "url": "https://github.com/AbdelStark/s1-rs", "kind": "sdk", "pattern": "client", "note": "Typed System One layer for Rust"},
-    {"name": "typesafe_ai (Elixir)", "url": "https://github.com/typesend/typesafe_ai", "kind": "sdk", "pattern": "client", "note": "Typed Elixir client, offline stubs"},
-    {"name": "TypeSafeAI.Net", "url": "https://github.com/Hawxy/TypeSafeAI.Net", "kind": "sdk", "pattern": "client", "note": ".NET SDK"},
-    {"name": "typesafe-sdk-php", "url": "https://github.com/valksor/typesafe-sdk-php", "kind": "sdk", "pattern": "client", "note": "Unofficial PHP SDK"},
-    {"name": "typesafe-sdk-swift", "url": "https://github.com/InsaneArts/typesafe-sdk-swift", "kind": "sdk", "pattern": "client", "note": "Swift SDK"},
-    {"name": "advocaat", "url": "https://github.com/pithings/advocaat", "kind": "sdk", "pattern": "client", "note": "Dataset questions client"},
-    {"name": "zod-jev", "url": "https://github.com/jomatsu/zod-jev", "kind": "sdk", "pattern": "other", "note": "Zod shape + Jev meaning"},
-    {"name": "jev-axi", "url": "https://github.com/shiftynick/jev-axi", "kind": "sdk", "pattern": "other", "note": "Shell pick/rate/check/rank/guard"},
-    {"name": "semdecide", "url": "https://github.com/sharziki/semdecide", "kind": "sdk", "pattern": "other", "note": "Unix pipeline semantic decisions"},
-    {"name": "laravel-typesafe-jev", "url": "https://github.com/Butochnikov/laravel-typesafe-jev", "kind": "sdk", "pattern": "client", "note": "Laravel typed responses + fakes"},
-
-    {"name": "foreman", "url": "https://github.com/thruwire/foreman", "kind": "agent", "pattern": "confidence-gate", "note": "Supervisor keeps coding agents on task", "x": "https://x.com/JoshARosen/status/2100573432089866717"},
-    {"name": "jev-review", "url": "https://github.com/devagrawal09/jev-review", "kind": "agent", "pattern": "intent-routing", "note": "Staged code-review workflow"},
-    {"name": "winnow", "url": "https://github.com/GhalebDweikat/winnow", "kind": "agent", "pattern": "confidence-gate", "note": "Judge tool results before context"},
-    {"name": "jev-guard", "url": "https://github.com/leepokai/jev-guard", "kind": "agent", "pattern": "confidence-gate", "note": "Allow/ask/deny tool-call risk"},
-    {"name": "jev-codex-router", "url": "https://github.com/0xNatoshi/jev-codex-router", "kind": "agent", "pattern": "intent-routing", "note": "Per-turn Codex model routing"},
-    {"name": "pi-jev", "url": "https://github.com/y0usaf/pi-jev", "kind": "agent", "pattern": "confidence-gate", "note": "Pi agent tool-call gate"},
-    {"name": "skillranker", "url": "https://github.com/Dicklesworthstone/skillranker", "kind": "agent", "pattern": "composite-score", "note": "Rank skills vs session context"},
-    {"name": "typesafe-mcp", "url": "https://github.com/itsmostafa/typesafe-mcp", "kind": "agent", "pattern": "client", "note": "MCP connector for Jev"},
-    {"name": "jev-mcp", "url": "https://github.com/blakestone-x/jev-mcp", "kind": "agent", "pattern": "client", "note": "classify/score/check/match/screen"},
-    {"name": "hermes-jev", "url": "https://github.com/keeltrace/hermes-jev", "kind": "agent", "pattern": "confidence-gate", "note": "Hermes decide/rank/verify/assess"},
-    {"name": "diffjury", "url": "https://github.com/raihankhan-rk/diffjury", "kind": "agent", "pattern": "intent-routing", "note": "PR risk router + review coach"},
-    {"name": "building-with-jev-skill", "url": "https://github.com/dbreunig/building-with-jev-skill", "kind": "agent", "pattern": "other", "note": "Question-design skill for agents"},
-    {"name": "bicameral", "url": "https://github.com/AbdelStark/bicameral", "kind": "agent", "pattern": "other", "note": "System 2 writes, Jev reflexes"},
-    {"name": "JevLint", "url": "https://github.com/huntedman/JevLint", "kind": "agent", "pattern": "other", "note": "Semantic lint via Noul"},
-
-    {"name": "jev-ultrafast", "url": "https://github.com/browser-use/jev-ultrafast", "kind": "browser", "pattern": "intent-routing", "note": "Jev picks op+DOM; LLM types only", "x": "https://x.com/gregpr07/status/2100411066966749359"},
-    {"name": "typesafe-computer-use", "url": "https://github.com/awlevin/typesafe-computer-use", "kind": "browser", "pattern": "intent-routing", "note": "macOS OCR + bounded Jev actions", "x": "https://x.com/awlevin/status/2100262612428894676"},
-    {"name": "aside-jev", "url": "https://github.com/himomohi/aside-jev", "kind": "browser", "pattern": "confidence-gate", "note": "Aside runtime, Jev decides"},
-    {"name": "mobile-jev", "url": "https://github.com/droidrun/mobile-jev", "kind": "browser", "pattern": "intent-routing", "note": "Android agent, Jev every decision"},
-    {"name": "jev-browser (jkudish)", "url": "https://github.com/jkudish/jev-browser", "kind": "browser", "pattern": "intent-routing", "note": "browser-use experiment"},
-    {"name": "JevTest", "url": "https://github.com/CorieW/JevTest", "kind": "browser", "pattern": "other", "note": "Bounded exploratory browser tests"},
-    {"name": "unclutter", "url": "https://github.com/kitze/unclutter", "kind": "browser", "pattern": "other", "note": "Page clutter removal extension", "x": "https://x.com/thekitze/status/2100595129874817340"},
-    {"name": "sift", "url": "https://github.com/tylergibbs1/sift", "kind": "browser", "pattern": "composite-score", "note": "Re-rank Google results with Jev"},
-
-    {"name": "neo4jev", "url": "https://github.com/jexp/neo4jev", "kind": "app", "pattern": "fan-out", "note": "Graph hop Choice + Noul per step", "x": "https://x.com/0xLogicrw/status/2100478725393686556"},
-    {"name": "jev-trader", "url": "https://github.com/jarrodwatts/jev-trader", "kind": "app", "pattern": "intent-routing", "note": "One trade decision per Monad block", "x": "https://x.com/jarrodwatts/status/2100356151468585346"},
-    {"name": "HA-Jev", "url": "https://github.com/AboveColin/HA-Jev", "kind": "app", "pattern": "other", "note": "Home Assistant entities from Jev"},
-    {"name": "hono-jev-router", "url": "https://github.com/yusukebe/hono-jev-router", "kind": "app", "pattern": "intent-routing", "note": "Route Hono requests by meaning"},
-    {"name": "jevlogs", "url": "https://github.com/reachjalil/jevlogs", "kind": "app", "pattern": "composite-score", "note": "OTel log triage before LLM"},
-    {"name": "pg-jev", "url": "https://github.com/realZachi/pg-jev", "kind": "app", "pattern": "other", "note": "PostgreSQL semantic questions"},
-    {"name": "killmyidea", "url": "https://github.com/monteduro/killmyidea", "kind": "app", "pattern": "intent-routing", "note": "Kill / fix / ship a startup idea"},
-    {"name": "jevmeter", "url": "https://github.com/ChetasLua/jevmeter", "kind": "app", "pattern": "composite-score", "note": "Score every sentence in a video", "x": "https://x.com/chetaslua/status/2100602714204049588"},
-    {"name": "citation-verifier", "url": "https://github.com/MarissaFamularo/citation-verifier", "kind": "app", "pattern": "confidence-gate", "note": "Does the paper support the cite?"},
-    {"name": "Jev-Moderation-Bot", "url": "https://github.com/brainstormity/Jev-Moderation-Bot", "kind": "app", "pattern": "fan-out", "note": "Discord phishing/spam parallel eval"},
-    {"name": "commit-miner", "url": "https://github.com/devanshbatham/commit-miner", "kind": "app", "pattern": "intent-routing", "note": "Classify commit diffs"},
-    {"name": "jevegis", "url": "https://github.com/0xArx/jevegis", "kind": "app", "pattern": "confidence-gate", "note": "LLM app guardrails in one call"},
-    {"name": "pkg-gate", "url": "https://github.com/hemanth/pkg-gate", "kind": "app", "pattern": "confidence-gate", "note": "npm lifecycle script security gate"},
-    {"name": "typesafe-jev-workflow", "url": "https://github.com/GiesN/typesafe-jev-workflow", "kind": "app", "pattern": "intent-routing", "note": "LangGraph email intent Choice"},
-
-    {"name": "typesafe-mario", "url": "https://github.com/fhshaik/typesafe-mario", "kind": "game", "pattern": "intent-routing", "note": "Mario from structured emulator state"},
-    {"name": "typesafe-snake", "url": "https://github.com/sorrycc/typesafe-snake", "kind": "game", "pattern": "intent-routing", "note": "One typed decision per tick"},
-    {"name": "heist-one", "url": "https://github.com/AbdelStark/heist-one", "kind": "game", "pattern": "other", "note": "Jev judges guards; code owns world"},
-    {"name": "jev-drone", "url": "https://github.com/RomanSlack/jev-drone", "kind": "game", "pattern": "other", "note": "MuJoCo quadrotor tactical Jev"},
-    {"name": "tsai-sc", "url": "https://github.com/phyous/tsai-sc", "kind": "game", "pattern": "intent-routing", "note": "StarCraft shareware via Jev"},
-    {"name": "jev-little-airways", "url": "https://github.com/lbotinelly/jev-little-airways", "kind": "game", "pattern": "fan-out", "note": "ATC divert/hold/clearance live"},
-    {"name": "jev-chat", "url": "https://github.com/adhyaay-karnwal/jev-chat", "kind": "game", "pattern": "other", "note": "Wrong-use study: chat from Choices"},
-
-    {"name": "openjev (TheoLeeCJ)", "url": "https://github.com/TheoLeeCJ/openjev", "kind": "research", "pattern": "other", "note": "Jev-like on a 3090 at home", "x": "https://x.com/hhkkmon/status/2100443314957038010"},
-    {"name": "openjev (razorback16)", "url": "https://github.com/razorback16/openjev", "kind": "research", "pattern": "client", "note": "Jev-compatible server on DiffusionGemma"},
-    {"name": "system-one-gemma", "url": "https://github.com/akash-kamat/system-one-gemma", "kind": "research", "pattern": "other", "note": "Open scoring head on Gemma 3 270M"},
-    {"name": "jev-sec-bench", "url": "https://github.com/Gaurav-Gosain/jev-sec-bench", "kind": "research", "pattern": "other", "note": "Blind prompt-injection + vuln code", "x": "https://x.com/_GauravGosain/status/2100111398277959715"},
-    {"name": "jev-benchmarks", "url": "https://github.com/AbdelStark/jev-benchmarks", "kind": "research", "pattern": "other", "note": "Calibration, selective risk, latency"},
-    {"name": "jev-korean-benchmark", "url": "https://github.com/mahlernim/jev-korean-benchmark", "kind": "research", "pattern": "other", "note": "Korean understanding / medical text"},
-    {"name": "jevmlx", "url": "https://github.com/bnsd55/jevmlx", "kind": "research", "pattern": "other", "note": "Parallel decisions on Apple MLX", "x": "https://x.com/beni_il_/status/2100617387116568956"},
-    {"name": "openjev-sglang", "url": "https://github.com/ekzhang/openjev-sglang", "kind": "research", "pattern": "client", "note": "Jev-compatible endpoint, open models"},
-
-    {"name": "cobanov/awesome-jev", "url": "https://github.com/cobanov/awesome-jev", "kind": "list", "pattern": "catalog", "note": "Source-backed curated list"},
-    {"name": "hellogumbo/awesome-jev", "url": "https://github.com/hellogumbo/awesome-jev", "kind": "list", "pattern": "catalog", "note": "Large directory + awesomejev.com"},
-    {"name": "awesome-jev-usecases", "url": "https://github.com/aliaihub/awesome-jev-usecases", "kind": "list", "pattern": "catalog", "note": "Evidence-backed use cases"},
-    {"name": "awesome-typesafe", "url": "https://github.com/AbdelStark/awesome-typesafe", "kind": "list", "pattern": "catalog", "note": "Official + community index"},
-    {"name": "awesome-jev-by-typesafe", "url": "https://github.com/Anil-matcha/awesome-jev-by-typesafe", "kind": "list", "pattern": "catalog", "note": "Patterns, prompts, starter code"},
-    {"name": "yibie/awesome-jev", "url": "https://github.com/yibie/awesome-jev", "kind": "list", "pattern": "catalog", "note": "Field guide by decision domain"},
-    {"name": "daftAI2026/awesome-jev", "url": "https://github.com/daftAI2026/awesome-jev", "kind": "list", "pattern": "catalog", "note": "Directory + X posts"},
-
-    {"name": "@typesafeai", "url": "https://x.com/typesafeai", "kind": "x", "pattern": "catalog", "note": "Official product/research posts"},
-    {"name": "Vercel AI Gateway Jev", "url": "https://x.com/typesafeai/status/2100376436272173088", "kind": "x", "pattern": "client", "note": "Hosted typesafe-ai/jev, no waitlist"},
-    {"name": "Browser Use ultrafast", "url": "https://x.com/gregpr07/status/2100411066966749359", "kind": "x", "pattern": "intent-routing", "note": "Jev picks browser op + element"},
-    {"name": "jev-trader on X", "url": "https://x.com/jarrodwatts/status/2100356151468585346", "kind": "x", "pattern": "intent-routing", "note": "On-chain Jev trade loop"},
-    {"name": "Logicrw field roundup", "url": "https://x.com/0xLogicrw/status/2100478725393686556", "kind": "x", "pattern": "catalog", "note": "Roundup of neo4jev, review, MCP, winnow"}
+    {
+      "name": "TypeSafe docs",
+      "url": "https://docs.typesafe.ai/introduction",
+      "kind": "official",
+      "pattern": "catalog",
+      "note": "Jev intro, primitives, POST /v1/systemone"
+    },
+    {
+      "name": "typesafe-sdk-python",
+      "url": "https://github.com/typesafe-ai/typesafe-sdk-python",
+      "kind": "official",
+      "pattern": "client",
+      "note": "Official Python SDK"
+    },
+    {
+      "name": "typesafe-sdk-js",
+      "url": "https://github.com/typesafe-ai/typesafe-sdk-js",
+      "kind": "official",
+      "pattern": "client",
+      "note": "Official TypeScript/JS SDK"
+    },
+    {
+      "name": "system-one-adapter-python",
+      "url": "https://github.com/typesafe-ai/system-one-adapter-python",
+      "kind": "official",
+      "pattern": "client",
+      "note": "LLM adapter for comparison"
+    },
+    {
+      "name": "typesafe-ai/skills",
+      "url": "https://github.com/typesafe-ai/skills",
+      "kind": "official",
+      "pattern": "other",
+      "note": "Official agent skill"
+    },
+    {
+      "name": "TypeSafe launch post",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "kind": "official",
+      "pattern": "catalog",
+      "note": "System One + Jev announcement"
+    },
+    {
+      "name": "jev-master",
+      "url": "https://github.com/kevin9327/jev-master",
+      "kind": "app",
+      "pattern": "catalog",
+      "note": "This monorepo: live compose apps + field map"
+    },
+    {
+      "name": "jev-bot",
+      "url": "https://github.com/kevin9327/jev-bot",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Canned-reply support bot, not a chatbot"
+    },
+    {
+      "name": "jev-harness",
+      "url": "https://github.com/kevin9327/jev-harness",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Tool-call execute/confirm/reject gate"
+    },
+    {
+      "name": "jev-code",
+      "url": "https://github.com/kevin9327/jev-code",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Diff merge/comment/block gate"
+    },
+    {
+      "name": "jevclient",
+      "url": "https://github.com/AboveColin/jevclient",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Async Python client"
+    },
+    {
+      "name": "jevgo",
+      "url": "https://github.com/fgn/jevgo",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Go client + optional Langfuse"
+    },
+    {
+      "name": "jev-go",
+      "url": "https://github.com/Gaurav-Gosain/jev-go",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Go System One client"
+    },
+    {
+      "name": "typesafe-go",
+      "url": "https://github.com/zhirschtritt/typesafe-go",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Idiomatic Go SDK"
+    },
+    {
+      "name": "typesafe-rs",
+      "url": "https://github.com/AbdelStark/typesafe-rs",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Latency-first Rust SDK"
+    },
+    {
+      "name": "s1-rs",
+      "url": "https://github.com/AbdelStark/s1-rs",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Typed System One layer for Rust"
+    },
+    {
+      "name": "typesafe_ai (Elixir)",
+      "url": "https://github.com/typesend/typesafe_ai",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Typed Elixir client, offline stubs"
+    },
+    {
+      "name": "TypeSafeAI.Net",
+      "url": "https://github.com/Hawxy/TypeSafeAI.Net",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": ".NET SDK"
+    },
+    {
+      "name": "typesafe-sdk-php",
+      "url": "https://github.com/valksor/typesafe-sdk-php",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Unofficial PHP SDK"
+    },
+    {
+      "name": "typesafe-sdk-swift",
+      "url": "https://github.com/InsaneArts/typesafe-sdk-swift",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Swift SDK"
+    },
+    {
+      "name": "advocaat",
+      "url": "https://github.com/pithings/advocaat",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Dataset questions client"
+    },
+    {
+      "name": "zod-jev",
+      "url": "https://github.com/jomatsu/zod-jev",
+      "kind": "sdk",
+      "pattern": "other",
+      "note": "Zod shape + Jev meaning"
+    },
+    {
+      "name": "jev-axi",
+      "url": "https://github.com/shiftynick/jev-axi",
+      "kind": "sdk",
+      "pattern": "other",
+      "note": "Shell pick/rate/check/rank/guard"
+    },
+    {
+      "name": "semdecide",
+      "url": "https://github.com/sharziki/semdecide",
+      "kind": "sdk",
+      "pattern": "other",
+      "note": "Unix pipeline semantic decisions"
+    },
+    {
+      "name": "laravel-typesafe-jev",
+      "url": "https://github.com/Butochnikov/laravel-typesafe-jev",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Laravel typed responses + fakes"
+    },
+    {
+      "name": "foreman",
+      "url": "https://github.com/thruwire/foreman",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Supervisor keeps coding agents on task",
+      "x": "https://x.com/JoshARosen/status/2100573432089866717"
+    },
+    {
+      "name": "jev-review",
+      "url": "https://github.com/devagrawal09/jev-review",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Staged code-review workflow"
+    },
+    {
+      "name": "winnow",
+      "url": "https://github.com/GhalebDweikat/winnow",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Judge tool results before context"
+    },
+    {
+      "name": "jev-guard",
+      "url": "https://github.com/leepokai/jev-guard",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Allow/ask/deny tool-call risk"
+    },
+    {
+      "name": "jev-codex-router",
+      "url": "https://github.com/0xNatoshi/jev-codex-router",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Per-turn Codex model routing"
+    },
+    {
+      "name": "pi-jev",
+      "url": "https://github.com/y0usaf/pi-jev",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Pi agent tool-call gate"
+    },
+    {
+      "name": "skillranker",
+      "url": "https://github.com/Dicklesworthstone/skillranker",
+      "kind": "agent",
+      "pattern": "composite-score",
+      "note": "Rank skills vs session context"
+    },
+    {
+      "name": "typesafe-mcp",
+      "url": "https://github.com/itsmostafa/typesafe-mcp",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "MCP connector for Jev"
+    },
+    {
+      "name": "jev-mcp",
+      "url": "https://github.com/blakestone-x/jev-mcp",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "classify/score/check/match/screen"
+    },
+    {
+      "name": "hermes-jev",
+      "url": "https://github.com/keeltrace/hermes-jev",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Hermes decide/rank/verify/assess"
+    },
+    {
+      "name": "diffjury",
+      "url": "https://github.com/raihankhan-rk/diffjury",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "PR risk router + review coach"
+    },
+    {
+      "name": "building-with-jev-skill",
+      "url": "https://github.com/dbreunig/building-with-jev-skill",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Question-design skill for agents"
+    },
+    {
+      "name": "bicameral",
+      "url": "https://github.com/AbdelStark/bicameral",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "System 2 writes, Jev reflexes"
+    },
+    {
+      "name": "JevLint",
+      "url": "https://github.com/huntedman/JevLint",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Semantic lint via Noul"
+    },
+    {
+      "name": "jev-ultrafast",
+      "url": "https://github.com/browser-use/jev-ultrafast",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Jev picks op+DOM; LLM types only",
+      "x": "https://x.com/gregpr07/status/2100411066966749359"
+    },
+    {
+      "name": "typesafe-computer-use",
+      "url": "https://github.com/awlevin/typesafe-computer-use",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "macOS OCR + bounded Jev actions",
+      "x": "https://x.com/awlevin/status/2100262612428894676"
+    },
+    {
+      "name": "aside-jev",
+      "url": "https://github.com/himomohi/aside-jev",
+      "kind": "browser",
+      "pattern": "confidence-gate",
+      "note": "Aside runtime, Jev decides"
+    },
+    {
+      "name": "mobile-jev",
+      "url": "https://github.com/droidrun/mobile-jev",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Android agent, Jev every decision"
+    },
+    {
+      "name": "jev-browser (jkudish)",
+      "url": "https://github.com/jkudish/jev-browser",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "browser-use experiment"
+    },
+    {
+      "name": "JevTest",
+      "url": "https://github.com/CorieW/JevTest",
+      "kind": "browser",
+      "pattern": "other",
+      "note": "Bounded exploratory browser tests"
+    },
+    {
+      "name": "unclutter",
+      "url": "https://github.com/kitze/unclutter",
+      "kind": "browser",
+      "pattern": "other",
+      "note": "Page clutter removal extension",
+      "x": "https://x.com/thekitze/status/2100595129874817340"
+    },
+    {
+      "name": "sift",
+      "url": "https://github.com/tylergibbs1/sift",
+      "kind": "browser",
+      "pattern": "composite-score",
+      "note": "Re-rank Google results with Jev"
+    },
+    {
+      "name": "neo4jev",
+      "url": "https://github.com/jexp/neo4jev",
+      "kind": "app",
+      "pattern": "fan-out",
+      "note": "Graph hop Choice + Noul per step",
+      "x": "https://x.com/0xLogicrw/status/2100478725393686556"
+    },
+    {
+      "name": "jev-trader",
+      "url": "https://github.com/jarrodwatts/jev-trader",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "One trade decision per Monad block",
+      "x": "https://x.com/jarrodwatts/status/2100356151468585346"
+    },
+    {
+      "name": "HA-Jev",
+      "url": "https://github.com/AboveColin/HA-Jev",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Home Assistant entities from Jev"
+    },
+    {
+      "name": "hono-jev-router",
+      "url": "https://github.com/yusukebe/hono-jev-router",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Route Hono requests by meaning"
+    },
+    {
+      "name": "jevlogs",
+      "url": "https://github.com/reachjalil/jevlogs",
+      "kind": "app",
+      "pattern": "composite-score",
+      "note": "OTel log triage before LLM"
+    },
+    {
+      "name": "pg-jev",
+      "url": "https://github.com/realZachi/pg-jev",
+      "kind": "app",
+      "pattern": "other",
+      "note": "PostgreSQL semantic questions"
+    },
+    {
+      "name": "killmyidea",
+      "url": "https://github.com/monteduro/killmyidea",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Kill / fix / ship a startup idea"
+    },
+    {
+      "name": "jevmeter",
+      "url": "https://github.com/ChetasLua/jevmeter",
+      "kind": "app",
+      "pattern": "composite-score",
+      "note": "Score every sentence in a video",
+      "x": "https://x.com/chetaslua/status/2100602714204049588"
+    },
+    {
+      "name": "citation-verifier",
+      "url": "https://github.com/MarissaFamularo/citation-verifier",
+      "kind": "app",
+      "pattern": "confidence-gate",
+      "note": "Does the paper support the cite?"
+    },
+    {
+      "name": "Jev-Moderation-Bot",
+      "url": "https://github.com/brainstormity/Jev-Moderation-Bot",
+      "kind": "app",
+      "pattern": "fan-out",
+      "note": "Discord phishing/spam parallel eval"
+    },
+    {
+      "name": "commit-miner",
+      "url": "https://github.com/devanshbatham/commit-miner",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Classify commit diffs"
+    },
+    {
+      "name": "jevegis",
+      "url": "https://github.com/0xArx/jevegis",
+      "kind": "app",
+      "pattern": "confidence-gate",
+      "note": "LLM app guardrails in one call"
+    },
+    {
+      "name": "pkg-gate",
+      "url": "https://github.com/hemanth/pkg-gate",
+      "kind": "app",
+      "pattern": "confidence-gate",
+      "note": "npm lifecycle script security gate"
+    },
+    {
+      "name": "typesafe-jev-workflow",
+      "url": "https://github.com/GiesN/typesafe-jev-workflow",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "LangGraph email intent Choice"
+    },
+    {
+      "name": "typesafe-mario",
+      "url": "https://github.com/fhshaik/typesafe-mario",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Mario from structured emulator state"
+    },
+    {
+      "name": "typesafe-snake",
+      "url": "https://github.com/sorrycc/typesafe-snake",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "One typed decision per tick"
+    },
+    {
+      "name": "heist-one",
+      "url": "https://github.com/AbdelStark/heist-one",
+      "kind": "game",
+      "pattern": "other",
+      "note": "Jev judges guards; code owns world"
+    },
+    {
+      "name": "jev-drone",
+      "url": "https://github.com/RomanSlack/jev-drone",
+      "kind": "game",
+      "pattern": "other",
+      "note": "MuJoCo quadrotor tactical Jev"
+    },
+    {
+      "name": "tsai-sc",
+      "url": "https://github.com/phyous/tsai-sc",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "StarCraft shareware via Jev"
+    },
+    {
+      "name": "jev-little-airways",
+      "url": "https://github.com/lbotinelly/jev-little-airways",
+      "kind": "game",
+      "pattern": "fan-out",
+      "note": "ATC divert/hold/clearance live"
+    },
+    {
+      "name": "jev-chat",
+      "url": "https://github.com/adhyaay-karnwal/jev-chat",
+      "kind": "game",
+      "pattern": "other",
+      "note": "Wrong-use study: chat from Choices"
+    },
+    {
+      "name": "openjev (TheoLeeCJ)",
+      "url": "https://github.com/TheoLeeCJ/openjev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Jev-like on a 3090 at home",
+      "x": "https://x.com/hhkkmon/status/2100443314957038010"
+    },
+    {
+      "name": "openjev (razorback16)",
+      "url": "https://github.com/razorback16/openjev",
+      "kind": "research",
+      "pattern": "client",
+      "note": "Jev-compatible server on DiffusionGemma"
+    },
+    {
+      "name": "system-one-gemma",
+      "url": "https://github.com/akash-kamat/system-one-gemma",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Open scoring head on Gemma 3 270M"
+    },
+    {
+      "name": "jev-sec-bench",
+      "url": "https://github.com/Gaurav-Gosain/jev-sec-bench",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Blind prompt-injection + vuln code",
+      "x": "https://x.com/_GauravGosain/status/2100111398277959715"
+    },
+    {
+      "name": "jev-benchmarks",
+      "url": "https://github.com/AbdelStark/jev-benchmarks",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Calibration, selective risk, latency"
+    },
+    {
+      "name": "jev-korean-benchmark",
+      "url": "https://github.com/mahlernim/jev-korean-benchmark",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Korean understanding / medical text"
+    },
+    {
+      "name": "jevmlx",
+      "url": "https://github.com/bnsd55/jevmlx",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Parallel decisions on Apple MLX",
+      "x": "https://x.com/beni_il_/status/2100617387116568956"
+    },
+    {
+      "name": "openjev-sglang",
+      "url": "https://github.com/ekzhang/openjev-sglang",
+      "kind": "research",
+      "pattern": "client",
+      "note": "Jev-compatible endpoint, open models"
+    },
+    {
+      "name": "cobanov/awesome-jev",
+      "url": "https://github.com/cobanov/awesome-jev",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Source-backed curated list"
+    },
+    {
+      "name": "hellogumbo/awesome-jev",
+      "url": "https://github.com/hellogumbo/awesome-jev",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Large directory + awesomejev.com"
+    },
+    {
+      "name": "awesome-jev-usecases",
+      "url": "https://github.com/aliaihub/awesome-jev-usecases",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Evidence-backed use cases"
+    },
+    {
+      "name": "awesome-typesafe",
+      "url": "https://github.com/AbdelStark/awesome-typesafe",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Official + community index"
+    },
+    {
+      "name": "awesome-jev-by-typesafe",
+      "url": "https://github.com/Anil-matcha/awesome-jev-by-typesafe",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Patterns, prompts, starter code"
+    },
+    {
+      "name": "yibie/awesome-jev",
+      "url": "https://github.com/yibie/awesome-jev",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Field guide by decision domain"
+    },
+    {
+      "name": "daftAI2026/awesome-jev",
+      "url": "https://github.com/daftAI2026/awesome-jev",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Directory + X posts"
+    },
+    {
+      "name": "@typesafeai",
+      "url": "https://x.com/typesafeai",
+      "kind": "x",
+      "pattern": "catalog",
+      "note": "Official product/research posts"
+    },
+    {
+      "name": "Vercel AI Gateway Jev",
+      "url": "https://x.com/typesafeai/status/2100376436272173088",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Hosted typesafe-ai/jev, no waitlist"
+    },
+    {
+      "name": "Browser Use ultrafast",
+      "url": "https://x.com/gregpr07/status/2100411066966749359",
+      "kind": "x",
+      "pattern": "intent-routing",
+      "note": "Jev picks browser op + element"
+    },
+    {
+      "name": "jev-trader on X",
+      "url": "https://x.com/jarrodwatts/status/2100356151468585346",
+      "kind": "x",
+      "pattern": "intent-routing",
+      "note": "On-chain Jev trade loop"
+    },
+    {
+      "name": "Logicrw field roundup",
+      "url": "https://x.com/0xLogicrw/status/2100478725393686556",
+      "kind": "x",
+      "pattern": "catalog",
+      "note": "Roundup of neo4jev, review, MCP, winnow"
+    },
+    {
+      "name": "jev",
+      "url": "https://github.com/dannote/jev",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Elixir/OTP client designed around GenServer replies and pattern matching."
+    },
+    {
+      "name": "jev-dsl",
+      "url": "https://github.com/inanna-malick/jev-dsl",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Early-alpha Haskell DSL that encodes typed question packets and decodes answers; HTTP transport is left to the caller."
+    },
+    {
+      "name": "jev-mcp",
+      "url": "https://github.com/BYK/jev-mcp",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "An eval-first MCP server for Jev, that returns typed judgments (noul, choice, score) with probabilities instead of generated text."
+    },
+    {
+      "name": "jev-shell-history",
+      "url": "https://github.com/mrnugget/jev-shell-history",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Ranks existing zsh history entries for inline completion; accepting a suggestion does not execute it."
+    },
+    {
+      "name": "jev.nvim",
+      "url": "https://github.com/valentynkit/jev.nvim",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Neovim plugin that splits the buffer into functions with Treesitter, scores each against a plain-language question with Jev, and ranks answe"
+    },
+    {
+      "name": "Jevbridge",
+      "url": "https://github.com/gamesonrblx/Jevbridge",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "ACP/MCP adapter for using Jev alongside coding and chat models."
+    },
+    {
+      "name": "jevr",
+      "url": "https://github.com/simxnherrera/jevr",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Native R client for typed questions and provider-independent answers through TypeSafe or OpenRouter."
+    },
+    {
+      "name": "ruby_decision_model",
+      "url": "https://github.com/obie/ruby_decision_model",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Ruby client with standard-library transport for TypeSafe and OpenRouter decision endpoints."
+    },
+    {
+      "name": "typesafe-sdk-java",
+      "url": "https://github.com/Premo-Cloud/typesafe-sdk-java",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Community Java 17 client for Choice, Score, and Noul, with an optional Spring Boot starter."
+    },
+    {
+      "name": "agent-router",
+      "url": "https://github.com/nidhi-singh02/agent-router",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Pre-release Herdr integration that filters eligible coding models by quota and policy before Jev ranks them."
+    },
+    {
+      "name": "blink",
+      "url": "https://github.com/ellipsis-dev/blink",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Navigates file and directory names with Jev-guided walkers to find codebase paths for a natural-language query."
+    },
+    {
+      "name": "Canny",
+      "url": "https://github.com/qkal/Canny",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Evidence ledger that challenges unsupported \"done\" claims from coding agents."
+    },
+    {
+      "name": "is-malicious",
+      "url": "https://github.com/luantak/is-malicious",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Scans source, configuration, build, and CI files with Jev, then reports suspicious behavior and implicated lines before the code is run."
+    },
+    {
+      "name": "jev-belay",
+      "url": "https://github.com/valentynkit/jev-belay",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Claude Code Stop hook that checks the transcript for evidence before trusting a \"done\" claim, spending one four-question Jev call only when"
+    },
+    {
+      "name": "jev-commit",
+      "url": "https://github.com/valentynkit/jev-commit",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Pre-commit hook where one Jev call judges whether the commit message matches the staged diff, flags debug leftovers and unmentioned work, an"
+    },
+    {
+      "name": "jev-pref",
+      "url": "https://github.com/doeixd/jev-pref",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Linter that has Jev check code changes against project preferences from `jev-pref.json` and feeds findings back to coding agents."
+    },
+    {
+      "name": "jev-review MCP plugin",
+      "url": "https://github.com/NiazMorshed2007/jev-review",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Local-first continuous software-quality review for coding agents."
+    },
+    {
+      "name": "jev-router",
+      "url": "https://github.com/gargpratyush/jev-router",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Chooses a model for each fresh Claude Code or Codex turn while wrapping the existing CLI."
+    },
+    {
+      "name": "jevwire",
+      "url": "https://github.com/Brainwires/jevwire",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "MCP tools, an embeddable decision library, and advisory or restrictive Claude Code hooks; judgments do not grant native permissions."
+    },
+    {
+      "name": "opencode-jev-orchestrator",
+      "url": "https://github.com/aaronshaf/opencode-jev-orchestrator",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Keeps an OpenCode parent model fixed and uses Jev difficulty judgments to delegate harder turns to temporary subagents."
+    },
+    {
+      "name": "perch",
+      "url": "https://github.com/lakeday-org/perch",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Semantic code linter that evaluates code units against configurable Jev questions."
+    },
+    {
+      "name": "pi-warden",
+      "url": "https://github.com/DevMortimer/pi-warden",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Pi extension that judges rule compliance, risky actions, stuck loops, and completion claims; enforcement depends on the hook and policy."
+    },
+    {
+      "name": "skillbox",
+      "url": "https://github.com/kitze/skillbox",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Self-hosted skill library with optional Jev relevance recommendations over an authorized catalog."
+    },
+    {
+      "name": "supercov",
+      "url": "https://github.com/supercorp-ai/supercov",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Scores source files so coding agents can prioritize code-quality work."
+    },
+    {
+      "name": "wakegate",
+      "url": "https://github.com/shitianfang/wakegate",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Experimental gate where Jev decides whether a timer or incoming event is worth resuming a sleeping agent's LLM; code skips only when Jev is"
+    },
+    {
+      "name": "fast-dev-compaction",
+      "url": "https://github.com/leonaaardob/fast-dev-compaction",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Codex port that restores Jev-selected verbatim history around native session compaction."
+    },
+    {
+      "name": "fast-jev-compaction",
+      "url": "https://github.com/tamaratran/fast-jev-compaction",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Claude Code plugin and library that score tool-call/result pairs for deletion or truncation while retaining selected text verbatim."
+    },
+    {
+      "name": "pi-fast-jev-compaction",
+      "url": "https://github.com/joelhooks/pi-fast-jev-compaction",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Pi extension that prunes stale tool history and leaves summary compaction to Pi when pruning is insufficient."
+    },
+    {
+      "name": "pi-jev-compact",
+      "url": "https://github.com/ilkerulusoy/pi-jev-compact",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Selective, verbatim context compaction for Pi using Jev model."
+    },
+    {
+      "name": "pi-jev-context",
+      "url": "https://github.com/kevinpita/pi-jev-context",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Opt-in Pi extension that filters older messages from model requests while preserving the original session history."
+    },
+    {
+      "name": "yoshi",
+      "url": "https://github.com/compozy/yoshi",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Experimental Claude Code/Codex proxy that uses Jev to prune request context while preserving tool-call protocol structure."
+    },
+    {
+      "name": "BrowserClaw",
+      "url": "https://github.com/GoldenLoaf24h/browserclaw",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Zero-lock, session-preserving Chrome MCP server that couples a local Jev System One semantic micro-loop (`chrome_act_toward_goal`) with an 8"
+    },
+    {
+      "name": "jev-browser-use",
+      "url": "https://github.com/wy-coliney/jev-browser-use",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Codex browser skill that uses Jev for navigation and target selection while Codex handles text entry and outcome verification."
+    },
+    {
+      "name": "jev-voice-browser",
+      "url": "https://github.com/moritzkremb/jev-voice-browser",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Maps partial speech transcripts to browser intents and observed targets, with code deciding whether to act, wait, or ask."
+    },
+    {
+      "name": "duckdb-jev",
+      "url": "https://github.com/colliber/duckdb-jev",
+      "kind": "app",
+      "pattern": "other",
+      "note": "DuckDB extension that exposes Jev judgments as SQL values with return types derived from the declared criteria."
+    },
+    {
+      "name": "jev-curate",
+      "url": "https://github.com/AkashPriyadarshii/jev-curate",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Streaming filter and scorer for Parquet and JSONL datasets."
+    },
+    {
+      "name": "jev-reviewer",
+      "url": "https://github.com/choxos/jev-reviewer",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Research-document extraction aid where Jev selects and verifies source lines for verbatim quotes; findings require human review and are not"
+    },
+    {
+      "name": "jev-search",
+      "url": "https://github.com/superagents-lab/jev-search",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Uses Jev to select search sources and rank Search1API results, returning source links and snippets."
+    },
+    {
+      "name": "jev-trade",
+      "url": "https://github.com/aowang-ai/jev-trade",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Hyperliquid trading desk where Jev answers Choice questions for long/short, open/close/hold, and leverage; application code quotes or sends"
+    },
+    {
+      "name": "jev-tree",
+      "url": "https://github.com/reachjalil/jev-tree",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Recursive choice over taxonomies larger than Jev's direct option limit."
+    },
+    {
+      "name": "jevql",
+      "url": "https://github.com/kylemclaren/jevql",
+      "kind": "app",
+      "pattern": "other",
+      "note": "psql-shaped client and Go/TypeScript/Python SDKs for vanilla Postgres where Jev makes Noul, Choice, and Score judgements about individual ta"
+    },
+    {
+      "name": "jevsql",
+      "url": "https://github.com/EugeneBoondock/jevsql",
+      "kind": "app",
+      "pattern": "other",
+      "note": "SQL-like filtering, ranking, classification, and scoring with natural-language predicates."
+    },
+    {
+      "name": "llama-index-jev",
+      "url": "https://github.com/WiktorB2004/llama-index-jev",
+      "kind": "app",
+      "pattern": "other",
+      "note": "LlamaIndex reranker and selector using Jev Score and Choice answers, with configurable confidence handling."
+    },
+    {
+      "name": "n8n-nodes-typesafe-jev",
+      "url": "https://github.com/n3ndor/n8n-nodes-typesafe-jev",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Community n8n node for asking multiple typed questions over workflow state."
+    },
+    {
+      "name": "pg_typesafe",
+      "url": "https://github.com/giuliosmall/pg_typesafe",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Pre-alpha PostgreSQL C extension exposing Choice, Noul, Score, and batched judgments from SQL."
+    },
+    {
+      "name": "tax-doc-classifier",
+      "url": "https://github.com/kyotofin/tax-doc-classifier",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Classifies text-bearing PDF pages into IRS form and page-kind candidates with a confidence gate; document triage, not tax advice, and scanne"
+    },
+    {
+      "name": "tiershift",
+      "url": "https://github.com/iamvatsalpatel/tiershift",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Policy-bounded model routing for TypeScript and Python."
+    },
+    {
+      "name": "jev-canvas",
+      "url": "https://github.com/gaborishka/jev-canvas",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Voice and finger-pointing control of a tldraw canvas: Jev picks the action, target shape and place from each partial transcript plus the fin"
+    },
+    {
+      "name": "jev-experiments",
+      "url": "https://github.com/dabit3/jev-experiments",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Collection of inspectable Jev demos, including scripted support conversations with typed intent, escalation, and suggested-response decision"
+    },
+    {
+      "name": "jev-plays-pokemon-red",
+      "url": "https://github.com/valentynkit/jev-plays-pokemon-red",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Pokemon Red on PyBoy where deterministic code owns the route and arithmetic and Jev picks only at branches, with every battle turn's faint p"
+    },
+    {
+      "name": "JevPilot",
+      "url": "https://github.com/standardagents/jevpilot",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Three.js driving simulation where Jev chooses among candidate paths and speeds while local code handles vehicle dynamics and geometry."
+    },
+    {
+      "name": "JevScape",
+      "url": "https://github.com/Skyvern-AI/jevscape",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "RuneBench-based RuneScape harness that maps Jev choices to a bounded game-action catalog and records tick-level results."
+    },
+    {
+      "name": "jev-skip",
+      "url": "https://github.com/valentynkit/jev-skip",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Browser extension that reads the YouTube caption track and paints a per-segment sponsor probability on the seek bar before the intro ends, w"
+    },
+    {
+      "name": "Jevthoven",
+      "url": "https://github.com/cocktailpeanut/jevthoven",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Symbolic-music studio where Jev chooses plans, instruments, and bar patterns, and code renders editable music and MIDI."
+    },
+    {
+      "name": "SlidePilot",
+      "url": "https://github.com/harshil1712/slidepilot",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Experimental Slidev controller that judges speech transcripts for slide completion, with deterministic checks and manual navigation."
+    },
+    {
+      "name": "Sponsor Skip",
+      "url": "https://github.com/trungdq88/youtube-sponsor-detection",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Finds sponsor reads in YouTube transcripts or transcribed audio while code owns timestamps and playback skipping."
+    },
+    {
+      "name": "Vibe Check for X",
+      "url": "https://github.com/RafalWilinski/vibecheck",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Chrome extension that scores draft posts and reply context before posting; optional media descriptions come from a separate vision model."
+    },
+    {
+      "name": "Jev Visual",
+      "url": "https://github.com/hr98w/jev-visual",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Educational MLX/Qwen vision-language experiment sharing image context across candidate-scoring questions; its probabilities are not calibrat"
+    },
+    {
+      "name": "Jevlike",
+      "url": "https://github.com/vinnylarouge/jevlike",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Trainable encoder and option-attention head for variable candidate sets, with separate visual game experiments."
+    },
+    {
+      "name": "LitJev",
+      "url": "https://github.com/zhengxuyu/litjev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Reproduction of Jev that turns any Qwen model into a fast decision model, serving the same `/v1/systemone` schema (Choice, Score, Noul) with"
+    },
+    {
+      "name": "kev",
+      "url": "https://github.com/jaredpalmer/kev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Qwen2.5-0.5B adapter and decision head with training code, released weights, and parallel typed-question inference."
+    },
+    {
+      "name": "NanoJev",
+      "url": "https://github.com/TianyuCodings/NanoJev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Small parallel-decision model with dynamic candidates, a training pipeline, and recorded game comparisons that include shared code planning."
+    },
+    {
+      "name": "openjev",
+      "url": "https://github.com/zhihz/openjev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Local bilingual probability decisions from context, questions, and candidate answers."
+    },
+    {
+      "name": "openvons",
+      "url": "https://github.com/genai-craft/openvons",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Open decision layer for finite options across text, images, and Japanese voice commands."
+    },
+    {
+      "name": "parallelConstraintDecoding",
+      "url": "https://github.com/stephanj/parallelConstraintDecoding",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Java and llama.cpp experiments in parallel constrained decoding."
+    },
+    {
+      "name": "reflex",
+      "url": "https://github.com/kshetrajna12/reflex",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Open-model decision engine with shared-state inference, isolated question branches, and a WebGPU demo; browser and Python configurations dif"
+    },
+    {
+      "name": "SemIf",
+      "url": "https://github.com/TheoLeeCJ/SemIf",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Formerly OpenJev: an independent study of typed option readout from frozen open models, with shared-prefix experiments and a WebGPU demo."
+    },
+    {
+      "name": "Simple Jev",
+      "url": "https://github.com/featherless-ai/simple-jev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Transforms compatible open-model logits into typed decisions without a separately trained classifier head; model compatibility is constraine"
+    },
+    {
+      "name": "Verdict-open-jev",
+      "url": "https://github.com/Heman10x-NGU/Verdict-open-jev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "ModernBERT decision engine with calibrated uncertainty and a WebGPU playground."
+    },
+    {
+      "name": "Janus",
+      "url": "https://github.com/FirasSX914/Janus",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Measures when to use Jev versus other models and routes accordingly."
+    },
+    {
+      "name": "jev-behavior-study",
+      "url": "https://github.com/RINNECODER/jev-behavior-study",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Independent synthetic-task study of Jev 1.13.0 framing sensitivity and failures, with raw responses and offline report checks."
+    },
+    {
+      "name": "jev-eval",
+      "url": "https://github.com/4esv/jev-eval",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Independent Jev versus GPT-5.6 Terra comparison on three labeled classification tasks, reporting accuracy, calibration, latency, and cost."
+    },
+    {
+      "name": "jev-eval-agent",
+      "url": "https://github.com/vinilana/jev-eval-agent",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Compares LLM tool selection with Jev routing in a personal-assistant harness containing 100 mocked tools."
+    },
+    {
+      "name": "jev-orderby-bench",
+      "url": "https://github.com/yodablocks/jev-orderby-bench",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Measures whether ORDER BY over a Jev probability is defensible (inversion rate, Score ordinality against a human grade, calibration, wording"
+    },
+    {
+      "name": "jev-search-rerank-eval",
+      "url": "https://github.com/zhuyansen/jev-search-rerank-eval",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Chinese/English retrieval evaluation comparing Jev reranking with lexical, embedding, and fusion baselines, including judge-circularity anal"
+    },
+    {
+      "name": "jevcal",
+      "url": "https://github.com/abhixhek/jevcal",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Fits and drift-checks confidence thresholds against labeled data."
+    },
+    {
+      "name": "typesafe-ai-benchmark",
+      "url": "https://github.com/iammrduncan/typesafe-ai-benchmark",
+      "kind": "research",
+      "pattern": "other",
+      "note": "LLM gateway that mimics the System One output shape for comparison work."
+    },
+    {
+      "name": "OmniJev/awesome-jev",
+      "url": "https://github.com/OmniJev/awesome-jev",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Papers, open reproductions, independent evaluations, and technical lineage."
+    },
+    {
+      "name": "awesome-jev-typesafe",
+      "url": "https://github.com/valentynkit/awesome-jev-typesafe",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "CC0, awesome-lint clean, sorted by what you would install, with a short know-before-you-build section on the limits."
+    },
+    {
+      "name": "jev-visual (kevin9327)",
+      "url": "https://github.com/kevin9327/jev-visual",
+      "kind": "research",
+      "pattern": "other",
+      "note": "User repo: educational Jev-like visual inference on Apple Silicon"
+    },
+    {
+      "name": "localjev",
+      "url": "https://github.com/githubnext/localjev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "GitHub Next local Jev-like decision model"
+    },
+    {
+      "name": "typesafe-ai-ruby",
+      "url": "https://github.com/hnegishi/typesafe-ai-ruby",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Unofficial Ruby gem for TypeSafe Jev"
+    },
+    {
+      "name": "jevis",
+      "url": "https://github.com/jaewgwon/jevis",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Flutter integration-test package driven by Jev"
+    },
+    {
+      "name": "ego-jev",
+      "url": "https://github.com/jiangkoumo/ego-jev",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Drive ego lite browser: one element table in, one op+target out"
+    },
+    {
+      "name": "jev-browser (Ying-Kai-Liao)",
+      "url": "https://github.com/Ying-Kai-Liao/jev-browser",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "LLM plans, Jev decides; library, CLI, MCP"
+    },
+    {
+      "name": "jev-browse",
+      "url": "https://github.com/0x7067/jev-browse",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Browser automation with Jev as decision model"
+    },
+    {
+      "name": "jev-voice",
+      "url": "https://github.com/kevinbadi/jev-voice",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Talk to your Mac: whisper.cpp + one Jev call per command"
+    },
+    {
+      "name": "typesafe-ai-jev (Java)",
+      "url": "https://github.com/kcb-swe-gh/typesafe-ai-jev",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Java 21 client for Jev structured decisions"
+    },
+    {
+      "name": "pi-jev-auto-mode",
+      "url": "https://github.com/jomatsu/pi-jev-auto-mode",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Pi auto-mode: Jev auto-approves bash/write/edit, fail-closed"
+    },
+    {
+      "name": "computer-use-jev",
+      "url": "https://github.com/paulsmith/computer-use-jev",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "macOS computer use driven by Jev"
+    },
+    {
+      "name": "askjev",
+      "url": "https://github.com/pZacca/askjev",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "Unofficial MCP server for Jev"
+    },
+    {
+      "name": "reranker",
+      "url": "https://github.com/hev/reranker",
+      "kind": "app",
+      "pattern": "composite-score",
+      "note": "Calibrated reranker: one Jev call, up to 30 documents"
+    },
+    {
+      "name": "jev-craft",
+      "url": "https://github.com/akash-kamat/jev-craft",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Minecraft survival bot that thinks with Jev"
+    },
+    {
+      "name": "jevplayground",
+      "url": "https://github.com/terryds/jevplayground",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Browser-only Jev playground via Vercel AI Gateway"
+    },
+    {
+      "name": "jevmod",
+      "url": "https://github.com/ohernandezdev/jevmod",
+      "kind": "app",
+      "pattern": "fan-out",
+      "note": "Moderation bots (Discord/Telegram/Reddit) with Jev probabilities"
+    },
+    {
+      "name": "jevball",
+      "url": "https://github.com/atarikcaliskan/jevball",
+      "kind": "game",
+      "pattern": "fan-out",
+      "note": "3D football: every player is its own Jev decision"
+    },
+    {
+      "name": "typesafe-nes",
+      "url": "https://github.com/seanthomasevans/typesafe-nes",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Jev plays Mario, Contra, Mega Man via stable-retro"
+    },
+    {
+      "name": "jev-poker",
+      "url": "https://github.com/meetr1912/jev-poker",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Heads-up NLHE with decision probabilities on the side panel"
+    },
+    {
+      "name": "logicrw/awesome-jev-projects",
+      "url": "https://github.com/logicrw/awesome-jev-projects",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Source-backed ecosystem radar with automatic GitHub sync"
+    },
+    {
+      "name": "AnotiaWang/awesome-jev",
+      "url": "https://github.com/AnotiaWang/awesome-jev",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Curated Jev / System One applications and libraries"
+    },
+    {
+      "name": "fatwang2/awesome-jev",
+      "url": "https://github.com/fatwang2/awesome-jev",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Source-backed directory plus reusable Jev GitHub review workflow"
+    },
+    {
+      "name": "TypeSafe homepage",
+      "url": "https://typesafe.ai",
+      "kind": "official",
+      "pattern": "catalog",
+      "note": "Official product site for System One / Jev"
+    },
+    {
+      "name": "System One concept",
+      "url": "https://docs.typesafe.ai/concepts/system-one",
+      "kind": "official",
+      "pattern": "catalog",
+      "note": "Official System One / Jev concept page"
+    },
+    {
+      "name": "Jev models",
+      "url": "https://docs.typesafe.ai/models",
+      "kind": "official",
+      "pattern": "catalog",
+      "note": "Official Jev 1.13.0 model card, aliases, pricing"
+    },
+    {
+      "name": "Vercel AI Gateway changelog",
+      "url": "https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway",
+      "kind": "official",
+      "pattern": "client",
+      "note": "typesafe-ai/jev via AI SDK evaluate()"
+    },
+    {
+      "name": "OpenRouter Jev 1.13",
+      "url": "https://openrouter.ai/typesafe/jev-1.13",
+      "kind": "official",
+      "pattern": "client",
+      "note": "Provider listing for typesafe/jev-1.13"
+    },
+    {
+      "name": "Cloudflare AI Jev",
+      "url": "https://developers.cloudflare.com/ai/models/typesafe/jev",
+      "kind": "official",
+      "pattern": "client",
+      "note": "Provider-maintained typesafe/jev integration"
+    },
+    {
+      "name": "Jev launch (Diogo Almeida)",
+      "url": "https://x.com/CompleteSkeptic/status/2099925682726002904",
+      "kind": "x",
+      "pattern": "catalog",
+      "note": "Canonical Jev launch: RLCD, decision model not chat"
+    },
+    {
+      "name": "Jev on OpenRouter",
+      "url": "https://x.com/typesafeai/status/2100747035746193598",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Official OpenRouter beta listing"
+    },
+    {
+      "name": "Jev on Cloudflare AI Gateway",
+      "url": "https://x.com/typesafeai/status/2100700021700378803",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Official Cloudflare AI Gateway partnership"
+    },
+    {
+      "name": "Jev on Venice API",
+      "url": "https://x.com/AskVenice/status/2101095644467511578",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Venice API beta: typed answers for code branching"
+    },
+    {
+      "name": "OpenRouter Jev beta",
+      "url": "https://x.com/OpenRouter/status/2100744709589316009",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Partner launch: state + typed question, no JSON parse"
+    },
+    {
+      "name": "jevis Flutter package",
+      "url": "https://x.com/jake_gwon/status/2101194639948787818",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Flutter integration tests in natural language via Jev"
+    },
+    {
+      "name": "localjev + openjev roundup",
+      "url": "https://x.com/ersinkoc/status/2101229864305009124",
+      "kind": "x",
+      "pattern": "catalog",
+      "note": "Points at razorback16/openjev and githubnext/localjev"
+    },
+    {
+      "name": "Open System One models",
+      "url": "https://x.com/hhkkmon/status/2101219943744499783",
+      "kind": "x",
+      "pattern": "catalog",
+      "note": "Community roundup of local Jev-like models"
+    },
+    {
+      "name": "ego-jev on X",
+      "url": "https://x.com/jiangkoumo_/status/2101224137360654698",
+      "kind": "x",
+      "pattern": "intent-routing",
+      "note": "ego-jev open-source browser driver aligned with jev-ultrafast"
+    },
+    {
+      "name": "pi-jev-typesafe",
+      "url": "https://github.com/nardinmarcus/pi-jev-typesafe",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "Zero-dependency jev_ask tool for Pi with question linting and budget caps"
+    },
+    {
+      "name": "jev-typesafe-ai notes",
+      "url": "https://github.com/codaaiteam/jev-typesafe-ai",
+      "kind": "app",
+      "pattern": "catalog",
+      "note": "Unofficial developer notes and examples for Jev"
+    },
+    {
+      "name": "trade-jev",
+      "url": "https://github.com/justinhe16/trade-jev",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Backtest Jev as BUY/SELL/HOLD on NQ L10 order-book data"
+    },
+    {
+      "name": "jev-got",
+      "url": "https://github.com/phureewat29/jev-got",
+      "kind": "game",
+      "pattern": "other",
+      "note": "Jev PoC through Game of Thrones"
+    },
+    {
+      "name": "jev-model-router",
+      "url": "https://github.com/az9713/jev-model-router",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Jev model router on the Vercel AI Gateway"
+    },
+    {
+      "name": "typesafe-ai-playground",
+      "url": "https://github.com/markjaquith/typesafe-ai-playground",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Playground for Jev / System One experiments"
+    },
+    {
+      "name": "jev-academy",
+      "url": "https://github.com/Btheriot83/jev-academy",
+      "kind": "app",
+      "pattern": "catalog",
+      "note": "Public zero-to-hero Jev / TypeSafe walkthrough"
+    },
+    {
+      "name": "jev-exploration",
+      "url": "https://github.com/SamuelSacco/jev-exploration",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Claim audit, live demos, and runnable Jev code"
+    },
+    {
+      "name": "jev1",
+      "url": "https://github.com/jflam/jev1",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Smart-home assistant demo on Jev"
+    },
+    {
+      "name": "jev-router (gmaxxxie)",
+      "url": "https://github.com/gmaxxxie/jev-router",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Per-prompt Pi model routing driven by Jev"
+    },
+    {
+      "name": "skill-router",
+      "url": "https://github.com/lomeshdutta/skill-router",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Jev picks which installed Claude Code skill a session needs"
+    },
+    {
+      "name": "jev-dspy-lab",
+      "url": "https://github.com/jmanhype/jev-dspy-lab",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Calibration and selective-risk benchmarks in DSPy workflows"
+    },
+    {
+      "name": "jevx",
+      "url": "https://github.com/umgbhalla/jevx",
+      "kind": "research",
+      "pattern": "other",
+      "note": "API notes, benchmarks, and agent-loop experiments"
+    },
+    {
+      "name": "should-ai-kill-us-all",
+      "url": "https://github.com/hellogumbo/should-ai-kill-us-all",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Asks Jev whether AI should kill us all every ten minutes from headlines"
+    },
+    {
+      "name": "jev-synergy-screening",
+      "url": "https://github.com/PistachioAIHQ/jev-synergy-screening",
+      "kind": "research",
+      "pattern": "other",
+      "note": "ASReview SYNERGY abstract screening: Choice/Noul vs gold labels"
+    },
+    {
+      "name": "jev-telegram-admin",
+      "url": "https://github.com/Zumka1991/jev-telegram-admin",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Telegram group moderator powered by Jev"
+    },
+    {
+      "name": "JevBrowserExt",
+      "url": "https://github.com/chy4pro/JevBrowserExt",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Manifest V3 ultrafast browser automation extension"
+    },
+    {
+      "name": "jev-x-posts",
+      "url": "https://github.com/samoweb3/jev-x-posts",
+      "kind": "app",
+      "pattern": "composite-score",
+      "note": "48-hour X post report for Jev with sentiment labels"
+    },
+    {
+      "name": "jev-phishing-bench",
+      "url": "https://github.com/anisselbd/jev-phishing-bench",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Jev vs Claude Haiku 4.5 on 2000 phishing emails"
+    },
+    {
+      "name": "jevassert",
+      "url": "https://github.com/dtduc-git/jevassert",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Record/replay regression tests for Jev question packs"
+    },
+    {
+      "name": "jev-ja-eval",
+      "url": "https://github.com/uesgugikouhei-oss/jev-ja-eval",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Japanese customer-inquiry eval: Jev vs LLM vs rules"
+    },
+    {
+      "name": "jev-tick-lab",
+      "url": "https://github.com/shunta-furukawa/jev-tick-lab",
+      "kind": "research",
+      "pattern": "other",
+      "note": "One-second trading judgments on bitbank, logged for calibration"
+    },
+    {
+      "name": "jev-agent-failure-benchmark",
+      "url": "https://github.com/TokenTrim/jev-agent-failure-benchmark",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Jev vs LLM on Who&When Pro agent-failure attribution"
+    },
+    {
+      "name": "magi-system-on-jev",
+      "url": "https://github.com/hide-G/magi-system-on-jev",
+      "kind": "game",
+      "pattern": "fan-out",
+      "note": "MAGI three-sage deliberation rebuilt with Jev"
+    },
+    {
+      "name": "jev-voice-control",
+      "url": "https://github.com/chris-wozniczek/jev-voice-control",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Mac menu-bar: speech to Jev typed decisions to macOS actions"
+    },
+    {
+      "name": "instruct-jev",
+      "url": "https://github.com/ctaxnagomi/instruct-jev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "INSTRUCT_JEV choice/noul/score instruction corpus"
+    },
+    {
+      "name": "sf-autopilot",
+      "url": "https://github.com/flxbl-io/sf-autopilot",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "LLM plans Salesforce steps; Jev chooses; Playwright executes"
+    },
+    {
+      "name": "jev-gamebenchmark",
+      "url": "https://github.com/aieo-product/jev-gamebenchmark",
+      "kind": "game",
+      "pattern": "other",
+      "note": "Falling-block puzzle sandbox: Jev vs LLMs"
+    },
+    {
+      "name": "foreman (reification-labs)",
+      "url": "https://github.com/reification-labs/foreman",
+      "kind": "agent",
+      "pattern": "fan-out",
+      "note": "Elixir/Phoenix specialist agents behind a System Two foreman"
+    },
+    {
+      "name": "jeffrey",
+      "url": "https://github.com/thomasbrueggemann/jeffrey",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Coding agent CLI: Jev decides next step, LLM does the work"
+    },
+    {
+      "name": "ci-gatekeeper-bot-jev",
+      "url": "https://github.com/NemanjaManic/ci-gatekeeper-bot-jev",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "GitHub Action triages PRs with Jev before expensive review"
+    },
+    {
+      "name": "haikyuBattleJev",
+      "url": "https://github.com/aoi-yoneda/haikyuBattleJev",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Baseball pitch-call simulation judged by Jev"
+    },
+    {
+      "name": "jevspace",
+      "url": "https://github.com/imserhatdemir/jevspace",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "DarkOrbit-style Three.js space game piloted by Jev"
+    },
+    {
+      "name": "jev-judge-bench",
+      "url": "https://github.com/cmartinez9/jev-judge-bench",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Binary LLM-judge bench: Jev vs frontier judge"
+    },
+    {
+      "name": "jevcumber",
+      "url": "https://github.com/RubyBrewsday/jevcumber",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Cucumber .feature files: Jev resolves Gherkin, Playwright runs"
+    },
+    {
+      "name": "jevmap",
+      "url": "https://github.com/aegsrl7/jevmap",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Jev hands a coding agent the ten files that matter for a task"
+    },
+    {
+      "name": "jev-anotacao-sentencas",
+      "url": "https://github.com/lab-dados/jev-anotacao-sentencas",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Jev vs Gemini vs GPT on TJSP sentence annotation"
+    },
+    {
+      "name": "dual-process-ai",
+      "url": "https://github.com/taro1985/dual-process-ai",
+      "kind": "research",
+      "pattern": "other",
+      "note": "System 1 Jev + System 2 Gemini design pattern"
+    },
+    {
+      "name": "jev-atlas",
+      "url": "https://github.com/gorock007/jev-atlas",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Independent evidence-first field guide to Jev"
+    },
+    {
+      "name": "stanley",
+      "url": "https://github.com/armansra-hub/stanley",
+      "kind": "app",
+      "pattern": "other",
+      "note": "NetSuite AE territory intelligence: Jev interprets company evidence"
+    },
+    {
+      "name": "jevsome-projects",
+      "url": "https://github.com/ozers/jevsome-projects",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Projects that provably call Jev, with line-of-code evidence"
+    },
+    {
+      "name": "potpie-doc-parser",
+      "url": "https://github.com/0xSarnavo/potpie-doc-parser",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Extractive docs search powered by Jev, no generated text"
+    },
+    {
+      "name": "jev-mcp (codaaiteam)",
+      "url": "https://github.com/codaaiteam/jev-mcp",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "MCP server: classify, score, check, gate risky tool calls"
+    },
+    {
+      "name": "omarchy-issue-classifier",
+      "url": "https://github.com/robzolkos/omarchy-issue-classifier",
+      "kind": "app",
+      "pattern": "fan-out",
+      "note": "Ten typed questions per Omarchy issue in one Jev request"
+    },
+    {
+      "name": "jev-baton",
+      "url": "https://github.com/shitianfang/jev-baton",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Pass the baton between LLM and Jev: MCP + escalation contract"
+    },
+    {
+      "name": "jev-harness-router",
+      "url": "https://github.com/JoacoMarc/jev-harness-router",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Per-turn harness router: model tier, tools, skill, effort budget"
+    },
+    {
+      "name": "polymarket-btc-5m-agent",
+      "url": "https://github.com/BrunooMoniz/polymarket-btc-5m-agent",
+      "kind": "app",
+      "pattern": "confidence-gate",
+      "note": "Polymarket BTC 5m agent: code model, Jev as gate"
+    },
+    {
+      "name": "hermes-jev-north-star",
+      "url": "https://github.com/poponline63/hermes-jev-north-star",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "Hermes skill: Jev ranks what is still unproven"
+    },
+    {
+      "name": "jev-radar",
+      "url": "https://github.com/everyinfra/jev-radar",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Ecosystem tracker of documented Jev cases, rescanned on a timer"
+    },
+    {
+      "name": "the-llm-dispatcher",
+      "url": "https://github.com/Rawson08/the-llm-dispatcher",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "OpenAI-compatible proxy: Jev dispatches cheapest sufficient model"
+    },
+    {
+      "name": "jev-jp-address",
+      "url": "https://github.com/smasato/jev-jp-address",
+      "kind": "research",
+      "pattern": "other",
+      "note": "KEN_ALL Japanese address fuzzy-match eval via Jev"
+    },
+    {
+      "name": "ask-jev-ai",
+      "url": "https://github.com/waynesutton/ask-jev-ai",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Public wall: 3-15 word questions, yes/no/depends in ~100ms"
+    },
+    {
+      "name": "chakravyuha-jev",
+      "url": "https://github.com/kspviswa/chakravyuha-jev",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Polar ring-maze where every move is a Jev decision"
+    },
+    {
+      "name": "zio-typesafe-ai",
+      "url": "https://github.com/jamesward/zio-typesafe-ai",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Scala 3 / ZIO client for Jev"
+    },
+    {
+      "name": "typesafe-sdk (Ruby)",
+      "url": "https://github.com/joshmn/typesafe-sdk",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Ruby client for TypeSafe System One"
+    },
+    {
+      "name": "swift-typesafe",
+      "url": "https://github.com/ainame/swift-typesafe",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Unofficial Swift 6 SDK"
+    },
+    {
+      "name": "typesafe_sdk (Elixir)",
+      "url": "https://github.com/nshkrdotcom/typesafe_sdk",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Elixir Hex SDK for System One / Jev"
+    },
+    {
+      "name": "typesafe-cli (y0usaf)",
+      "url": "https://github.com/y0usaf/typesafe-cli",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Shell noul/choice/score CLI"
+    },
+    {
+      "name": "typesafe-mcp (y0usaf)",
+      "url": "https://github.com/y0usaf/typesafe-mcp",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "Unofficial MCP evaluate(state, questions)"
+    },
+    {
+      "name": "jev-cli (tumf)",
+      "url": "https://github.com/tumf/jev-cli",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "CLI + stdio MCP + bundled skill"
+    },
+    {
+      "name": "jev-mcp (jkudish)",
+      "url": "https://github.com/jkudish/jev-mcp",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "MCP tools for TypeSafe Jev judgments"
+    },
+    {
+      "name": "jev-java",
+      "url": "https://github.com/Olti1947/jev-java",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Java 17 SDK for Jev System One"
+    },
+    {
+      "name": "jev-sdk-go",
+      "url": "https://github.com/kazz187/jev-sdk-go",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Go client with typed Choice/Score/Noul"
+    },
+    {
+      "name": "hs-jev",
+      "url": "https://github.com/getmissionctrl/hs-jev",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Haskell System One client"
+    },
+    {
+      "name": "jeff",
+      "url": "https://github.com/logan-markewich/jeff",
+      "kind": "research",
+      "pattern": "client",
+      "note": "Self-hosted GLiFormer drop-in for TypeSafe Jev API"
+    },
+    {
+      "name": "jev-ultrafast-mcp",
+      "url": "https://github.com/jiawei686/jev-ultrafast-mcp",
+      "kind": "browser",
+      "pattern": "other",
+      "note": "MCP wrapper around jev-ultrafast-style browser control"
+    },
+    {
+      "name": "jev-frontend-qa",
+      "url": "https://github.com/Nainish-Rai/jev-frontend-qa",
+      "kind": "browser",
+      "pattern": "other",
+      "note": "Frontend QA on Jev Ultrafast"
+    },
+    {
+      "name": "jevbrow",
+      "url": "https://github.com/timpratim/jevbrow",
+      "kind": "browser",
+      "pattern": "other",
+      "note": "Codex/Claude Code browser skill on Jev Ultrafast"
+    },
+    {
+      "name": "jev-research-eval",
+      "url": "https://github.com/jgridifier/jev-research-eval",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Reproducible Jev Ultrafast research-browser eval"
+    },
+    {
+      "name": "jev-computer-use",
+      "url": "https://github.com/max1874/jev-computer-use",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "macOS port of jev-ultrafast indexed action space"
+    },
+    {
+      "name": "JevPiano",
+      "url": "https://github.com/charleeagni/JevPiano",
+      "kind": "game",
+      "pattern": "other",
+      "note": "TypeSafe Jev + jev-ultrafast real-time piano controller"
+    },
+    {
+      "name": "typesafe-assist",
+      "url": "https://github.com/JanOstrowka/typesafe-assist",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Home Assistant Assist conversation agent using Jev"
+    },
+    {
+      "name": "typesafe-migration-guard",
+      "url": "https://github.com/opaielsheikh/typesafe-migration-guard",
+      "kind": "app",
+      "pattern": "confidence-gate",
+      "note": "DDL safety gate via Jev SAFE/DANGER"
+    },
+    {
+      "name": "jev-compactor",
+      "url": "https://github.com/edwardyen724-g/jev-compactor",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Context compaction using System One questions"
+    },
+    {
+      "name": "jev-system-architect",
+      "url": "https://github.com/samtay32/jev-system-architect",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Skill mapping fuzzy judgment to Choice/Score/Noul"
+    },
+    {
+      "name": "vgi-typesafe",
+      "url": "https://github.com/Query-farm/vgi-typesafe",
+      "kind": "app",
+      "pattern": "client",
+      "note": "DuckDB/SQL table functions wrapping System One questions"
+    },
+    {
+      "name": "new-api-plugin-typesafe",
+      "url": "https://github.com/FFatTiger/new-api-plugin-typesafe",
+      "kind": "app",
+      "pattern": "client",
+      "note": "new-api plugin for native /v1/systemone"
+    },
+    {
+      "name": "typesafe-adblock",
+      "url": "https://github.com/realZachi/typesafe-adblock",
+      "kind": "browser",
+      "pattern": "confidence-gate",
+      "note": "Chrome extension: Jev noul is-this-DOM-node-an-ad"
+    },
+    {
+      "name": "live-jev",
+      "url": "https://github.com/vinilana/live-jev",
+      "kind": "game",
+      "pattern": "other",
+      "note": "Browser 2D car sim driven by TypeSafe Jev"
+    },
+    {
+      "name": "jevinci",
+      "url": "https://github.com/achimala/jevinci",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Use Jev to make art"
+    },
+    {
+      "name": "jev-semgrep",
+      "url": "https://github.com/uehaj/jev-semgrep",
+      "kind": "app",
+      "pattern": "other",
+      "note": "grep-by-meaning scored by TypeSafe Jev"
+    },
+    {
+      "name": "jev-rules",
+      "url": "https://github.com/EliaAlberti/jev-rules",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Jev picks which Claude rules apply per prompt"
+    },
+    {
+      "name": "jevocks",
+      "url": "https://github.com/unicodeveloper/jevocks",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Everyday stocks status with Jev"
+    },
+    {
+      "name": "jev-chat (w3cj)",
+      "url": "https://github.com/w3cj/jev-chat",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Tool-calling chatbot with Jev and no LLM"
+    },
+    {
+      "name": "jev-mcp-dispatcher",
+      "url": "https://github.com/abhishekashokvkumar/jev-mcp-dispatcher",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Probe MCP tools then Jev picks function/args"
+    },
+    {
+      "name": "jev-hub",
+      "url": "https://github.com/mizzlelover/jev-hub",
+      "kind": "list",
+      "pattern": "catalog",
+      "note": "Chinese index of Jev demos and articles"
+    },
+    {
+      "name": "open-alternative-jev",
+      "url": "https://github.com/ikermoel/open-alternative-jev",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Packed one-pass typed decisions from open LLMs"
+    },
+    {
+      "name": "newsjack",
+      "url": "https://github.com/elvisun/newsjack",
+      "kind": "app",
+      "pattern": "composite-score",
+      "note": "PR agent: Jev ranks news for brands"
+    },
+    {
+      "name": "jev-vs-llm",
+      "url": "https://github.com/BUNYOD0987/jev-vs-llm",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Jev vs GPT-5.6 Luna vs Sonnet 5 ticket bench"
+    },
+    {
+      "name": "triage-bot",
+      "url": "https://github.com/TheEleventhAvatar/triage-bot",
+      "kind": "app",
+      "pattern": "intent-routing",
+      "note": "Jev classifies tickets; Cerebras drafts reply"
+    },
+    {
+      "name": "quackd",
+      "url": "https://github.com/rokbenko/quackd",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Multi-robot harness CLI with Jev discrete steps"
+    },
+    {
+      "name": "jev-game-agent",
+      "url": "https://github.com/IAnMove/jev-game-agent",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Mario RAM+lookahead Jev agent"
+    },
+    {
+      "name": "hermes-jev-plugin",
+      "url": "https://github.com/ajensenwaud/hermes-jev-plugin",
+      "kind": "agent",
+      "pattern": "client",
+      "note": "Hermes Agent tools plugin for Jev"
+    },
+    {
+      "name": "jev-macos-loop",
+      "url": "https://github.com/jcpsimmons/jev-macos-loop",
+      "kind": "browser",
+      "pattern": "intent-routing",
+      "note": "Native Mac clicker loop via Jev"
+    },
+    {
+      "name": "worth-replying",
+      "url": "https://github.com/AIsa-team/worth-replying",
+      "kind": "app",
+      "pattern": "confidence-gate",
+      "note": "Reply-worthiness gate"
+    },
+    {
+      "name": "Jevons",
+      "url": "https://github.com/jevonsdev/Jevons",
+      "kind": "app",
+      "pattern": "other",
+      "note": "Jev-driven buyback/burn on Robinhood Chain"
+    },
+    {
+      "name": "rubikjev",
+      "url": "https://github.com/0xtrou/rubikjev",
+      "kind": "game",
+      "pattern": "other",
+      "note": "Jev 3x3 cube solver"
+    },
+    {
+      "name": "jev-cookbook",
+      "url": "https://github.com/nexibeo/jev-cookbook",
+      "kind": "app",
+      "pattern": "other",
+      "note": "TypeSafe Jev recipes on OpenRouter"
+    },
+    {
+      "name": "Winnow (ThinkyMiner)",
+      "url": "https://github.com/ThinkyMiner/Winnow",
+      "kind": "browser",
+      "pattern": "confidence-gate",
+      "note": "Chrome worth-it gate (distinct from GhalebDweikat/winnow)"
+    },
+    {
+      "name": "systemone-lite",
+      "url": "https://github.com/fritzprix/systemone-lite",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Toy local System One-style decision API"
+    },
+    {
+      "name": "jev-pruner",
+      "url": "https://github.com/tamaratran/jev-pruner",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Claude Code plugin: Jev trims bash output"
+    },
+    {
+      "name": "jev-cli (Rust)",
+      "url": "https://github.com/shaharia-lab/jev-cli",
+      "kind": "sdk",
+      "pattern": "client",
+      "note": "Rust CLI for TypeSafe Jev"
+    },
+    {
+      "name": "jev-capability-atlas",
+      "url": "https://github.com/Zaious/jev-capability-atlas",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Evidence map of where Jev holds or breaks"
+    },
+    {
+      "name": "jev-security-scan",
+      "url": "https://github.com/win4r/jev-security-scan",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "TypeSafe Jev review of Skills/MCP"
+    },
+    {
+      "name": "Parsewell",
+      "url": "https://github.com/Shurikal/Parsewell",
+      "kind": "game",
+      "pattern": "other",
+      "note": "Batched Jev call per text-adventure move"
+    },
+    {
+      "name": "JevRouter",
+      "url": "https://github.com/BillionsBobby/JevRouter",
+      "kind": "agent",
+      "pattern": "intent-routing",
+      "note": "Jev-powered router for models, tools, subagents"
+    },
+    {
+      "name": "jev (Claude plugin)",
+      "url": "https://github.com/BorisLeMeec/jev",
+      "kind": "agent",
+      "pattern": "other",
+      "note": "Claude Code plugin for Jev"
+    },
+    {
+      "name": "mario-jev",
+      "url": "https://github.com/shantanugoel/mario-jev",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Mario via Jev"
+    },
+    {
+      "name": "laya",
+      "url": "https://github.com/NandhaKishorM/laya",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Non-AR RLCD decision model"
+    },
+    {
+      "name": "jev-on-a-laptop",
+      "url": "https://github.com/rorshopping/jev-on-a-laptop",
+      "kind": "research",
+      "pattern": "other",
+      "note": "Local Jev-like parallel decisions on a laptop"
+    },
+    {
+      "name": "sqlite-jev",
+      "url": "https://github.com/mgaitan/sqlite-jev",
+      "kind": "sdk",
+      "pattern": "other",
+      "note": "SQLite C extension for Jev judgments"
+    },
+    {
+      "name": "jevkit",
+      "url": "https://github.com/ariel-frischer/jevkit",
+      "kind": "sdk",
+      "pattern": "other",
+      "note": "Rust question linter + caller"
+    },
+    {
+      "name": "jev-shield",
+      "url": "https://github.com/caiovicentino/jev-shield",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "MCP semantic firewall"
+    },
+    {
+      "name": "vercel-labs/fx",
+      "url": "https://github.com/vercel-labs/fx",
+      "kind": "agent",
+      "pattern": "confidence-gate",
+      "note": "typesafe_permission_reviewer using Jev"
+    },
+    {
+      "name": "jev-plays-pokemon",
+      "url": "https://github.com/milanboers/jev-plays-pokemon",
+      "kind": "game",
+      "pattern": "intent-routing",
+      "note": "Pokemon Red typed questions"
+    },
+    {
+      "name": "y0usaf typesafe-mcp on X",
+      "url": "https://x.com/realy0usaf/status/2100106949874335851",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Community MCP evaluate(state, questions)"
+    },
+    {
+      "name": "tumf jev-cli on X",
+      "url": "https://x.com/DevTumf/status/2101071184855261563",
+      "kind": "x",
+      "pattern": "client",
+      "note": "Unofficial CLI+stdio MCP"
+    },
+    {
+      "name": "AbdelStark awesome-typesafe on X",
+      "url": "https://x.com/AbdelStark/status/2100524358254911889",
+      "kind": "x",
+      "pattern": "catalog",
+      "note": "Launch of awesome-typesafe community index"
+    },
+    {
+      "name": "Foreman OSS on X",
+      "url": "https://x.com/JoshARosen/status/2100573432089866717",
+      "kind": "x",
+      "pattern": "confidence-gate",
+      "note": "thruwire/foreman: Jev supervises coding agents"
+    },
+    {
+      "name": "openjev community writeup",
+      "url": "https://x.com/hhkkmon/status/2100443314957038010",
+      "kind": "x",
+      "pattern": "other",
+      "note": "Community writeup of TheoLeeCJ/openjev"
+    },
+    {
+      "name": "jev-craft on X",
+      "url": "https://x.com/_akashkamat/status/2101208666074751136",
+      "kind": "x",
+      "pattern": "intent-routing",
+      "note": "Minecraft survival bot thinking with Jev"
+    },
+    {
+      "name": "fast-jev-compaction on X",
+      "url": "https://x.com/jreuben1/status/2101180061172826143",
+      "kind": "x",
+      "pattern": "confidence-gate",
+      "note": "Claude Code plugin: Jev keep/drop tool results"
+    },
+    {
+      "name": "quackd on X",
+      "url": "https://x.com/rokbenko/status/2101212301076414660",
+      "kind": "x",
+      "pattern": "intent-routing",
+      "note": "LeRobot SO-101 via quackd --jev on"
+    },
+    {
+      "name": "newsjack on X",
+      "url": "https://x.com/RoundtableSpace/status/2101253717689340320",
+      "kind": "x",
+      "pattern": "composite-score",
+      "note": "PR agent ranks news with Jev"
+    },
+    {
+      "name": "TechCrunch Jev",
+      "url": "https://x.com/TechCrunch/status/2101022221774856412",
+      "kind": "x",
+      "pattern": "catalog",
+      "note": "Press: cheaper/faster software intelligence"
+    },
+    {
+      "name": "Vercel Developers Jev",
+      "url": "https://x.com/vercel_dev/status/2100378959653507175",
+      "kind": "x",
+      "pattern": "client",
+      "note": "evaluate({ model: typesafe-ai/jev })"
+    },
+    {
+      "name": "OpenRouter decision model primer",
+      "url": "https://x.com/OpenRouter/status/2101061688338575739",
+      "kind": "x",
+      "pattern": "intent-routing",
+      "note": "Partner primer: yes/no and multiple-choice with confidence"
+    }
   ]
 }
