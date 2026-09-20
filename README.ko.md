@@ -3,7 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> · <a href="README.ko.md">한국어</a>
+  <strong><a href="README.md">English</a></strong>
+  &nbsp;·&nbsp;
+  <strong><a href="README.ko.md">한국어</a></strong>
 </p>
 
 <p align="center">
@@ -11,47 +13,90 @@
   <img src="https://img.shields.io/badge/POST-/v1/systemone-0f766e" alt="System One">
   <img src="https://img.shields.io/badge/python-3.10%2B-3776ab" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/license-MIT-5eead4" alt="MIT">
-  <img src="https://img.shields.io/badge/catalog-382_citations-134e4a" alt="인용 382">
+  <img src="https://img.shields.io/badge/catalog-382_by_kind-134e4a" alt="분류 382">
 </p>
-
-<p align="center"><b>상태를 넣고, 타입이 있는 답을 받고, 분기는 코드가 합니다.</b></p>
 
 # jev-master
 
-[TypeSafe Jev](https://docs.typesafe.ai/concepts/system-one)를 실제로 돌리는 작은 파이썬 모노레포입니다. 앱, `POST /v1/systemone` 클라이언트, 공개 프로젝트 인용 목록이 들어 있습니다.
+**상태를 넣고, 타입이 있는 답을 받고, 분기는 코드가 합니다.**
 
-Jev는 챗봇이 아닙니다. **판단할 내용(state)** 과 **질문(questions)** 을 보내면, 프로그램이 바로 갈라질 수 있는 확률을 돌려줍니다. 이 저장소는 생성된 글을 파싱하지 않습니다.
+[TypeSafe Jev](https://docs.typesafe.ai/concepts/system-one)는 챗봇이 아닙니다. **판단할 내용(state)** 과 **질문(questions)** 을 보내면 Choice / Score / Noul 확률이 돌아옵니다. 이 저장소는:
 
-위 화면은 `examples/stripe-ticket.txt`에 대한 실제 `jev-1.13.0` 호출입니다. 부서 `billing`(0.69), 불만 `1.0`, 긴급 `0.99` → `act` / `billing_priority_queue`. 원본 JSON: [`docs/assets/live-run.json`](docs/assets/live-run.json).
+1. **실행** — 조합 앱 7개와 실제 `POST /v1/systemone` 클라이언트.
+2. **분류 목록** — 공개 프로젝트 382개를 종류별로 인용 ([`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md)). 링크만 있고 클론하지 않습니다.
 
-## 목차
+위 화면은 `examples/stripe-ticket.txt`에 대한 실제 `jev-1.13.0` 호출 → `act` / `billing_priority_queue`. JSON: [`docs/assets/live-run.json`](docs/assets/live-run.json).
 
-- [이 저장소가 하는 일](#이-저장소가-하는-일)
-- [Jev가 돌려주는 것](#jev가-돌려주는-것)
-- [바로 실행](#바로-실행)
-- [앱을 고르는 법](#앱을-고르는-법)
-- [출력 예](#출력-예)
-- [브라우저](#브라우저)
-- [이미지 (공식 Jev는 사진을 못 봄)](#이미지-공식-jev는-사진을-못-봄)
-- [필드맵](#필드맵)
-- [키](#키)
-- [안 될 때](#안-될-때)
-- [라이선스](#라이선스)
+TypeSafe와 무관합니다. 이미지가 되는 [Djev](https://djev.dev)는 Maisa 제품입니다.
 
-## 이 저장소가 하는 일
+---
 
-| | 역할 |
-| --- | --- |
-| **이 저장소** | 실행 가능한 조합 로직 + 테스트 + 인용 목록 |
-| **TypeSafe Jev** | 호스트된 **텍스트** 판단 모델 (`api.typesafe.ai`) |
-| **Djev** | 이미지가 되는 Maisa 프리뷰 ([djev.dev](https://djev.dev)) — TypeSafe가 아님 |
-| **awesome-jev** | 링크 모음. 코드는 없음 |
+## 분류별로 보기
 
-TypeSafe와 무관합니다. 벤더가 적은 속도·가격은 벤더 숫자입니다.
+### A. 이 저장소 앱 (직접 실행)
+
+| 분류 | 명령 | 이럴 때 |
+| --- | --- | --- |
+| **라우팅** | `python -m jev_master ticket --state examples/stripe-ticket.txt` | 어느 부서·대기열? |
+| **확신 게이트** | `python -m jev_master gate --state examples/voice-command.txt` | 실행 / 사람 확인 / 에스컬레이션? |
+| **점수** | `python -m jev_master pitch --state examples/pitch.txt` | 라벨 하나가 아니라 0~1 가중합 |
+| **고정 봇** | `python -m jev_master bot --state examples/stripe-ticket.txt` | `reply` / `escalate` / `block` (채팅 LLM 아님) |
+| **도구 하네스** | `python -m jev_master harness --state examples/rm-step.json` | 에이전트 도구: `execute` / `confirm` / `reject` |
+| **머지 게이트** | `python -m jev_master code --state examples/risky.diff` | 디프: `merge` / `comment` / `block` |
+| **화면 플레이그라운드** | `python -m jev_master browser` | 확률 막대, 포트 **8765** |
+| **필드 목록** | `python -m jev_master catalog --kind vision` | 인용만. `--kind`는 아래 표 |
+
+폴더: [`ticket_router`](apps/ticket_router) · [`confidence_gate`](apps/confidence_gate) · [`pitch_score`](apps/pitch_score) · [`jev_bot`](apps/jev_bot) · [`jev_harness`](apps/jev_harness) · [`jev_code`](apps/jev_code) · [`jev_browser`](apps/jev_browser)
+
+단독 패키지: [jev-bot](https://github.com/kevin9327/jev-bot) · [jev-harness](https://github.com/kevin9327/jev-harness) · [jev-code](https://github.com/kevin9327/jev-code)
+
+### B. 공개 필드 (382개, 클론 없음)
+
+전체 표: [`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md). 종류만 보려면:
+
+| 종류 | 개수 | 내용 | 명령 | 전체 표 |
+| --- | ---: | --- | --- | --- |
+| `official` | 12 | TypeSafe 문서·SDK·게이트웨이 | `--kind official` | [공식](docs/ECOSYSTEM.md#official) |
+| `sdk` | 40 | Python, JS, Go, Rust, Java 등 클라이언트 | `--kind sdk` | [SDK](docs/ECOSYSTEM.md#sdks-and-clients) |
+| `agent` | 73 | MCP, 도구 게이트, 라우터, 압축 | `--kind agent` | [에이전트](docs/ECOSYSTEM.md#agents-gates-mcp) |
+| `browser` | 32 | 브라우저·데스크톱·폰 컴퓨터 사용 | `--kind browser` | [브라우저](docs/ECOSYSTEM.md#browser-and-computer-use) |
+| `vision` | 19 | 이미지: OCR→Jev, Djev, 로컬 VL | `--kind vision` | [비전](docs/ECOSYSTEM.md#vision-images-and-local-eyes) |
+| `app` | 71 | 제품 (트리아지, SQL, 트레이딩 등) | `--kind app` | [앱](docs/ECOSYSTEM.md#applications) |
+| `game` | 31 | Doom, 마리오, 스네이크, 드론 등 | `--kind game` | [게임](docs/ECOSYSTEM.md#games-and-simulations) |
+| `research` | 58 | 로컬·오픈 Jev 복제 | `--kind research` | [복제](docs/ECOSYSTEM.md#open-replicas-and-evals) |
+| `list` | 16 | 다른 awesome-jev 목록 | `--kind list` | [목록](docs/ECOSYSTEM.md#other-directories) |
+| `x` | 30 | X 원글 | `--kind x` | [X](docs/ECOSYSTEM.md#x-threads) |
+
+```bash
+python -m jev_master catalog
+python -m jev_master catalog --kind vision
+python -m jev_master catalog --json
+```
+
+---
+
+## 시작
+
+1. Python 3.10+, [console.typesafe.ai/settings/keys](https://console.typesafe.ai/settings/keys)의 TypeSafe 키.
+2. 클론, 테스트, **지금 연 셸**에 키. 커밋 금지. `.env` / `jevkey.txt`는 gitignore.
+3. `ticket` 한 번 돌리고 `answers`(Jev)와 `decision`(이 저장소)을 구분해서 봅니다.
+
+```bash
+git clone https://github.com/kevin9327/jev-master
+cd jev-master
+python -m pip install -e ".[dev]"
+python -m pytest
+```
+
+PowerShell: `$env:TYPESAFE_API_KEY = '…'` · bash: 같은 이름을 `export`. 그다음:
+
+```bash
+python -m jev_master ticket --state examples/stripe-ticket.txt
+```
 
 ## Jev가 돌려주는 것
 
-한 번의 HTTP 호출에 세 종류를 섞을 수 있습니다.
+한 호출에 세 종류를 섞고, 앱 결정은 코드가 만듭니다.
 
 | 종류 | 묻는 것 | 받는 것 |
 | --- | --- | --- |
@@ -61,61 +106,12 @@ TypeSafe와 무관합니다. 벤더가 적은 속도·가격은 벤더 숫자입
 
 ```
 state + questions  →  POST https://api.typesafe.ai/v1/systemone
-                      타입이 있는 답 (문장 없음)
-                   →  이 저장소의 compose_*()
-                   →  라우팅 / 게이트 / 점수
+                   →  여기 compose_*()  →  라우팅 / 게이트 / 점수
 ```
 
 정책이 바뀌면 파이썬 계수를 바꿉니다. 프롬프트를 다시 쓰지 않습니다.
 
-## 바로 실행
-
-**필요:** Python 3.10+, [console.typesafe.ai/settings/keys](https://console.typesafe.ai/settings/keys)에서 받은 TypeSafe 키.
-
-키는 커밋하지 마세요. 환경 변수로 두거나 저장소 밖에 둡니다. `.env`, `jevkey.txt`는 gitignore되어 있습니다.
-
-```bash
-git clone https://github.com/kevin9327/jev-master
-cd jev-master
-python -m pip install -e ".[dev]"
-python -m pytest
-```
-
-지금 연 셸에 `TYPESAFE_API_KEY`를 넣습니다. PowerShell은 `$env:TYPESAFE_API_KEY = '…'`, bash는 같은 이름을 `export` 합니다. 그다음:
-
-```bash
-python -m jev_master ticket --state examples/stripe-ticket.txt
-```
-
-JSON에 Jev의 `answers`와 이 저장소가 만든 `decision`이 같이 나와야 합니다.
-
-## 앱을 고르는 법
-
-| 명령 | 이럴 때 | 코드가 만드는 결과 |
-| --- | --- | --- |
-| `python -m jev_master ticket --state examples/stripe-ticket.txt` | 문의 부서·대기열 | 부서 + `act`/`escalate` + 핸들러 |
-| `python -m jev_master gate --state examples/voice-command.txt` | 위험한 동작, 확신 문턱 | `act` / `confirm` / `escalate` |
-| `python -m jev_master pitch --state examples/pitch.txt` | 라벨 하나가 아니라 가중합 | 0~1 점수 + 판정 |
-| `python -m jev_master bot --state examples/stripe-ticket.txt` | 고정 답변 (채팅 LLM 아님) | `reply` / `escalate` / `block` |
-| `python -m jev_master harness --state examples/rm-step.json` | 에이전트가 도구를 쓰려 할 때 | `execute` / `confirm` / `reject` |
-| `python -m jev_master code --state examples/risky.diff` | 디프 머지 게이트 | `merge` / `comment` / `block` |
-| `python -m jev_master browser` | 확률을 화면으로 볼 때 | 같은 조합기, 포트 **8765** |
-| `python -m jev_master catalog` | 인용된 382개 프로젝트 | 링크만, 클론 없음 |
-| `python -m jev_master catalog --kind vision` | 이미지 관련만 | Djev, OCR 후 Jev, 로컬 VL |
-
-같은 아이디어의 단독 패키지: [jev-bot](https://github.com/kevin9327/jev-bot) · [jev-harness](https://github.com/kevin9327/jev-harness) · [jev-code](https://github.com/kevin9327/jev-code)
-
-앱 폴더 README: [`apps/ticket_router`](apps/ticket_router) · [`apps/confidence_gate`](apps/confidence_gate) · [`apps/pitch_score`](apps/pitch_score) · [`apps/jev_bot`](apps/jev_bot) · [`apps/jev_harness`](apps/jev_harness) · [`apps/jev_code`](apps/jev_code) · [`apps/jev_browser`](apps/jev_browser)
-
-## 출력 예
-
-티켓 샘플 (`examples/stripe-ticket.txt`):
-
-```text
-Hi, I've been trying to connect my Stripe account for 3 days and it keeps failing. I'm losing sales. Please help ASAP.
-```
-
-실제 호출(줄임):
+티켓 샘플 (`examples/stripe-ticket.txt`) 실제 호출:
 
 ```json
 {
@@ -132,69 +128,43 @@ Hi, I've been trying to connect my Stripe account for 3 days and it keeps failin
 }
 ```
 
-`answers`는 Jev, `decision`은 여기 코드입니다. 테스트는 네트워크 없이 같은 모양의 답을 넣습니다 (`jev_master.client`와 `compose_*()`가 분리되어 있습니다).
+테스트는 네트워크 없이 같은 모양의 답을 넣습니다.
 
-## 브라우저
+## 화면
 
 ```bash
 python -m jev_master browser
 ```
 
-[http://127.0.0.1:8765](http://127.0.0.1:8765) 를 엽니다. 페이지는 같은 조합기를 씁니다. API 키는 서버 프로세스에만 있고 브라우저 번들에는 없습니다.
+[http://127.0.0.1:8765](http://127.0.0.1:8765). 키는 서버 프로세스에만 있습니다.
 
-## 이미지 (공식 Jev는 사진을 못 봄)
+## 이미지 (분류: `vision`)
 
-TypeSafe 문서: **텍스트/JSON만**. X에서 TypeSafe 직원은 [wait a while](https://x.com/dotpem/status/2101335033609138382)이라고 했습니다.
+**TypeSafe Jev는 텍스트만 봅니다.** X 직원: [wait a while](https://x.com/dotpem/status/2101335033609138382).
 
-그래도 “이미지 판단”을 하는 공개 작업은 아래 네 갈래입니다. **이 트리에 클론하지 않았습니다.** 인용만 합니다.
-
-| 방법 | 판단 모델이 실제로 보는 것 | 예 |
+| 방법 | 모델이 보는 것 | 예 |
 | --- | --- | --- |
 | OCR / 캡션 | 글 | [typesafe-computer-use](https://github.com/awlevin/typesafe-computer-use) · [nothotdog](https://github.com/anishsrinivasan/nothotdog) |
 | CV → JSON | 장면 숫자 | [jev-drone](https://github.com/RomanSlack/jev-drone) |
-| 모델 교체 | 픽셀 | [djev-dev](https://github.com/Davipar/djev-dev) · [jev_local](https://github.com/Argos1111/jev_local) · [jev-visual](https://github.com/hr98w/jev-visual) |
-| 픽셀을 글로 물어봄 | 격자 (그리기, 보기 아님) | [typesafe-image-diffusion](https://github.com/Wizhill05/typesafe-image-diffusion) |
+| 모델 교체 | 픽셀 | [djev-dev](https://github.com/Davipar/djev-dev) · [jev_local](https://github.com/Argos1111/jev_local) |
+| 픽셀을 글로 | 격자 (그리기) | [typesafe-image-diffusion](https://github.com/Wizhill05/typesafe-image-diffusion) |
 
-[Djev](https://djev.dev)는 **Maisa** 초대제 프리뷰입니다. `TYPESAFE_API_KEY`로는 안 됩니다.
-
-```bash
-python -m jev_master catalog --kind vision
-```
-
-## 필드맵
-
-2026-09-20 기준 GitHub/X 인용 **382개**. **링크만** 있습니다. 서브모듈·vendor 폴더는 없습니다.
-
-```bash
-python -m jev_master catalog                 # 전체
-python -m jev_master catalog --kind browser  # 브라우저·컴퓨터 사용
-python -m jev_master catalog --kind vision   # 이미지
-python -m jev_master catalog --json          # JSON
-```
-
-종류: `official` `sdk` `agent` `browser` `vision` `app` `game` `research` `list` `x`
-
-- 표: [`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md)
-- JSON: [`docs/ecosystem.json`](docs/ecosystem.json)
-
-대표 인용: [python SDK](https://github.com/typesafe-ai/typesafe-sdk-python) · [JS SDK](https://github.com/typesafe-ai/typesafe-sdk-js) · [skills](https://github.com/typesafe-ai/skills) · [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) · [djev-dev](https://github.com/Davipar/djev-dev) · [awesome-jev](https://github.com/cobanov/awesome-jev)
-
-TypeSafe: [소개](https://docs.typesafe.ai/introduction) · [API](https://docs.typesafe.ai/api) · [패턴](https://docs.typesafe.ai/patterns)
+Djev는 초대제입니다. TypeSafe 키는 거기서 401입니다. 목록: `python -m jev_master catalog --kind vision`
 
 ## 키
 
-런타임에만 읽습니다. README, 테스트, 이슈, 스크린샷에 키를 넣지 마세요.
+런타임에만 읽습니다. README·테스트·이슈·스크린샷에 키를 넣지 마세요.
 
 ## 안 될 때
 
 | 증상 | 볼 곳 |
 | --- | --- |
-| `TYPESAFE_API_KEY is not set` | **지금 연 셸**에 환경 변수를 넣고 다시 실행 |
-| HTTP 401 | 제품이 다름. TypeSafe 키 → `api.typesafe.ai`. Djev는 `djev_invite_…` |
-| HTTP 403 / waitlist | 키는 있는데 TypeSafe 계정이 아직 안 열린 경우 |
-| Windows에서 `pip install -e .` 실패 | Python 3.10+ 확인. 테스트는 `PYTHONPATH=src` 로 `python -m pytest` |
-| 브라우저가 비어 있음 | 먼저 `python -m jev_master browser` 를 켠 뒤 8765 |
-| catalog `--kind` 오류 | 위에 적은 종류 이름만 가능 |
+| `TYPESAFE_API_KEY is not set` | **지금 연 셸**에 키 |
+| HTTP 401 | TypeSafe 키 → `api.typesafe.ai`. Djev는 `djev_invite_…` |
+| HTTP 403 | TypeSafe 대기열 |
+| Windows `pip install -e .` 실패 | Python 3.10+. 테스트는 `PYTHONPATH=src` 후 `python -m pytest` |
+| 브라우저 빈 화면 | 먼저 `browser` 실행, 그다음 8765 |
+| `--kind` 오류 | **B** 표의 종류 이름만 |
 
 ## 라이선스
 

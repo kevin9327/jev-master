@@ -3,7 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> · <a href="README.ko.md">한국어</a>
+  <strong><a href="README.md">English</a></strong>
+  &nbsp;·&nbsp;
+  <strong><a href="README.ko.md">한국어</a></strong>
 </p>
 
 <p align="center">
@@ -11,47 +13,90 @@
   <img src="https://img.shields.io/badge/POST-/v1/systemone-0f766e" alt="System One">
   <img src="https://img.shields.io/badge/python-3.10%2B-3776ab" alt="Python 3.10+">
   <img src="https://img.shields.io/badge/license-MIT-5eead4" alt="MIT">
-  <img src="https://img.shields.io/badge/catalog-382_citations-134e4a" alt="382 citations">
+  <img src="https://img.shields.io/badge/catalog-382_by_kind-134e4a" alt="382 citations by kind">
 </p>
-
-<p align="center"><b>State in. Typed answers out. Your code decides.</b></p>
 
 # jev-master
 
-A small Python monorepo for [TypeSafe Jev](https://docs.typesafe.ai/concepts/system-one): live compose apps, a `POST /v1/systemone` client, and a cited map of the public field.
+**State in. Typed answers out. Your code decides.**
 
-Jev is not a chatbot. You send a **state** (the thing to judge) and named **questions**. It returns probabilities your program can branch on. This repo never parses generated prose.
+[TypeSafe Jev](https://docs.typesafe.ai/concepts/system-one) is a decision model, not a chatbot. You send a **state** and named **questions**. You get Choice / Score / Noul probabilities. This repo:
 
-The screenshot is a real `jev-1.13.0` call on `examples/stripe-ticket.txt`: department `billing` (0.69), frustration `1.0`, urgency `0.99` → `act` / `billing_priority_queue`. Raw JSON: [`docs/assets/live-run.json`](docs/assets/live-run.json).
+1. **Runs** seven compose apps on a live `POST /v1/systemone` client.
+2. **Indexes** 382 public projects **by category** ([`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md)). Links only — nothing is cloned.
 
-## Contents
+The screenshot is a real `jev-1.13.0` call on `examples/stripe-ticket.txt` → `act` / `billing_priority_queue`. JSON: [`docs/assets/live-run.json`](docs/assets/live-run.json).
 
-- [What this is](#what-this-is)
-- [What Jev returns](#what-jev-returns)
-- [Quickstart](#quickstart)
-- [Which app to run](#which-app-to-run)
-- [Example output](#example-output)
-- [Browser playground](#browser-playground)
-- [Images (TypeSafe Jev cannot see pixels)](#images-typesafe-jev-cannot-see-pixels)
-- [Field map](#field-map)
-- [Secrets](#secrets)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
+Not affiliated with TypeSafe. [Djev](https://djev.dev) (images) is Maisa, not TypeSafe.
 
-## What this is
+---
 
-| Layer | Role |
-| --- | --- |
-| **This repo** | Runnable composers + tests + catalog |
-| **TypeSafe Jev** | Hosted text decision model (`api.typesafe.ai`) |
-| **Djev** | Separate Maisa preview with **native images** ([djev.dev](https://djev.dev)) — not TypeSafe |
-| **awesome-jev lists** | URL directories only |
+## Browse by category
 
-Not affiliated with TypeSafe. Vendor latency/price numbers are theirs.
+### A. Apps in this repo (you run these)
+
+| Category | Command | Use it when |
+| --- | --- | --- |
+| **Routing** | `python -m jev_master ticket --state examples/stripe-ticket.txt` | Which queue / department? |
+| **Confidence gate** | `python -m jev_master gate --state examples/voice-command.txt` | Act, ask a human, or escalate? |
+| **Scoring** | `python -m jev_master pitch --state examples/pitch.txt` | Weighted 0–1 score, not one label |
+| **Canned bot** | `python -m jev_master bot --state examples/stripe-ticket.txt` | Fixed `reply` / `escalate` / `block` — not an LLM chat |
+| **Tool harness** | `python -m jev_master harness --state examples/rm-step.json` | Agent wants a tool: `execute` / `confirm` / `reject` |
+| **Merge gate** | `python -m jev_master code --state examples/risky.diff` | Diff: `merge` / `comment` / `block` |
+| **Playground UI** | `python -m jev_master browser` | Inspect bars in the browser on **:8765** |
+| **Field catalog** | `python -m jev_master catalog --kind vision` | List citations; `--kind` picks a row below |
+
+Folders: [`ticket_router`](apps/ticket_router) · [`confidence_gate`](apps/confidence_gate) · [`pitch_score`](apps/pitch_score) · [`jev_bot`](apps/jev_bot) · [`jev_harness`](apps/jev_harness) · [`jev_code`](apps/jev_code) · [`jev_browser`](apps/jev_browser)
+
+Standalone packages: [jev-bot](https://github.com/kevin9327/jev-bot) · [jev-harness](https://github.com/kevin9327/jev-harness) · [jev-code](https://github.com/kevin9327/jev-code)
+
+### B. Public field (382 citations, not cloned)
+
+Jump the full table: [`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md). Or print one kind:
+
+| Kind | Count | What you will find | Command | Full table |
+| --- | ---: | --- | --- | --- |
+| `official` | 12 | TypeSafe docs, SDKs, gateways | `--kind official` | [Official](docs/ECOSYSTEM.md#official) |
+| `sdk` | 40 | Python, JS, Go, Rust, Java, … clients | `--kind sdk` | [SDKs](docs/ECOSYSTEM.md#sdks-and-clients) |
+| `agent` | 73 | MCP, tool gates, routers, compaction | `--kind agent` | [Agents](docs/ECOSYSTEM.md#agents-gates-mcp) |
+| `browser` | 32 | Browser / desktop / phone computer-use | `--kind browser` | [Browser](docs/ECOSYSTEM.md#browser-and-computer-use) |
+| `vision` | 19 | Images: OCR→Jev, Djev, local VL | `--kind vision` | [Vision](docs/ECOSYSTEM.md#vision-images-and-local-eyes) |
+| `app` | 71 | Products (triage, SQL, trading, …) | `--kind app` | [Apps](docs/ECOSYSTEM.md#applications) |
+| `game` | 31 | Doom, Mario, snake, drone, … | `--kind game` | [Games](docs/ECOSYSTEM.md#games-and-simulations) |
+| `research` | 58 | Local / open Jev replicas | `--kind research` | [Replicas](docs/ECOSYSTEM.md#open-replicas-and-evals) |
+| `list` | 16 | Other awesome-jev directories | `--kind list` | [Lists](docs/ECOSYSTEM.md#other-directories) |
+| `x` | 30 | Source threads on X | `--kind x` | [X](docs/ECOSYSTEM.md#x-threads) |
+
+```bash
+python -m jev_master catalog
+python -m jev_master catalog --kind vision
+python -m jev_master catalog --json
+```
+
+---
+
+## Start here
+
+1. Python 3.10+ and a TypeSafe key from [console.typesafe.ai/settings/keys](https://console.typesafe.ai/settings/keys).
+2. Clone, test, set the key **in this shell** (never commit it). `.env` / `jevkey.txt` are gitignored.
+3. Run `ticket` once and read `answers` (Jev) vs `decision` (this repo).
+
+```bash
+git clone https://github.com/kevin9327/jev-master
+cd jev-master
+python -m pip install -e ".[dev]"
+python -m pytest
+```
+
+PowerShell: `$env:TYPESAFE_API_KEY = '…'` · bash: `export` that same name, then:
+
+```bash
+python -m jev_master ticket --state examples/stripe-ticket.txt
+```
 
 ## What Jev returns
 
-One HTTP call can mix all three:
+One HTTP call can mix all three. Code composes the app decision.
 
 | Primitive | Ask | You get |
 | --- | --- | --- |
@@ -61,61 +106,12 @@ One HTTP call can mix all three:
 
 ```
 state + questions  →  POST https://api.typesafe.ai/v1/systemone
-                      typed answers (no prose)
-                   →  compose_*() in this repo
-                   →  route / gate / score
+                   →  compose_*() here  →  route / gate / score
 ```
 
 Change a coefficient in Python when policy changes. Do not rewrite a prompt.
 
-## Quickstart
-
-**Need:** Python 3.10+, a TypeSafe key from [console.typesafe.ai/settings/keys](https://console.typesafe.ai/settings/keys).
-
-Never commit the key. Export it, or keep it outside the repo (this tree gitignores `.env` and `jevkey.txt`).
-
-```bash
-git clone https://github.com/kevin9327/jev-master
-cd jev-master
-python -m pip install -e ".[dev]"
-python -m pytest
-```
-
-Set `TYPESAFE_API_KEY` in the current shell (PowerShell: `$env:TYPESAFE_API_KEY = '…'` · bash: `export` that same name), then:
-
-```bash
-python -m jev_master ticket --state examples/stripe-ticket.txt
-```
-
-You should see JSON with `answers` (from Jev) and `decision` (from this repo).
-
-## Which app to run
-
-| Command | When to use it | Composed result |
-| --- | --- | --- |
-| `python -m jev_master ticket --state examples/stripe-ticket.txt` | Support / queue routing | department + `act`/`escalate` + handler |
-| `python -m jev_master gate --state examples/voice-command.txt` | Risky action, need a confidence bar | `act` / `confirm` / `escalate` |
-| `python -m jev_master pitch --state examples/pitch.txt` | Weighted score, not one label | 0–1 score + verdict |
-| `python -m jev_master bot --state examples/stripe-ticket.txt` | Canned replies, not a chat LLM | `reply` / `escalate` / `block` |
-| `python -m jev_master harness --state examples/rm-step.json` | Agent wants to run a tool | `execute` / `confirm` / `reject` |
-| `python -m jev_master code --state examples/risky.diff` | Diff merge gate | `merge` / `comment` / `block` |
-| `python -m jev_master browser` | Inspect probabilities in a UI | same composers, port **8765** |
-| `python -m jev_master catalog` | Browse 382 cited projects | links only, nothing cloned |
-| `python -m jev_master catalog --kind vision` | Image-related citations | Djev, OCR-then-Jev, local VL |
-
-Standalone packages of the same ideas: [jev-bot](https://github.com/kevin9327/jev-bot) · [jev-harness](https://github.com/kevin9327/jev-harness) · [jev-code](https://github.com/kevin9327/jev-code)
-
-Each app folder has a short README: [`apps/ticket_router`](apps/ticket_router), [`apps/confidence_gate`](apps/confidence_gate), [`apps/pitch_score`](apps/pitch_score), [`apps/jev_bot`](apps/jev_bot), [`apps/jev_harness`](apps/jev_harness), [`apps/jev_code`](apps/jev_code), [`apps/jev_browser`](apps/jev_browser).
-
-## Example output
-
-Ticket sample (`examples/stripe-ticket.txt`):
-
-```text
-Hi, I've been trying to connect my Stripe account for 3 days and it keeps failing. I'm losing sales. Please help ASAP.
-```
-
-Live capture (abridged):
+Live ticket sample (`examples/stripe-ticket.txt`):
 
 ```json
 {
@@ -132,54 +128,28 @@ Live capture (abridged):
 }
 ```
 
-`answers` come from Jev. `decision` is composed here. Tests inject the same answer shape without hitting the network (`jev_master.client` vs `compose_*()`).
+Tests inject that answer shape without the network.
 
-## Browser playground
+## Playground UI
 
 ```bash
 python -m jev_master browser
 ```
 
-Open [http://127.0.0.1:8765](http://127.0.0.1:8765). The page calls the same composers. The API key stays on the server process, not in the browser bundle.
+Open [http://127.0.0.1:8765](http://127.0.0.1:8765). The key stays on the server process.
 
-## Images (TypeSafe Jev cannot see pixels)
+## Images (own category: `vision`)
 
-Official TypeSafe docs: **text / JSON only**. On X, TypeSafe staff said [wait a while](https://x.com/dotpem/status/2101335033609138382).
+**TypeSafe Jev is text-only.** Staff on X: [wait a while](https://x.com/dotpem/status/2101335033609138382).
 
-How the field still “judges images” (cited, **not** vendored into this tree):
-
-| Method | What reaches the decision model | Examples |
+| Method | What the model sees | Examples |
 | --- | --- | --- |
 | OCR / caption | Text | [typesafe-computer-use](https://github.com/awlevin/typesafe-computer-use) · [nothotdog](https://github.com/anishsrinivasan/nothotdog) |
 | CV → JSON | Scene numbers | [jev-drone](https://github.com/RomanSlack/jev-drone) |
-| Swap the model | Pixels | [djev-dev](https://github.com/Davipar/djev-dev) · [jev_local](https://github.com/Argos1111/jev_local) · [jev-visual](https://github.com/hr98w/jev-visual) |
-| Pixel questions | A text grid (drawing, not seeing) | [typesafe-image-diffusion](https://github.com/Wizhill05/typesafe-image-diffusion) |
+| Swap the model | Pixels | [djev-dev](https://github.com/Davipar/djev-dev) · [jev_local](https://github.com/Argos1111/jev_local) |
+| Pixel questions | A text grid (drawing) | [typesafe-image-diffusion](https://github.com/Wizhill05/typesafe-image-diffusion) |
 
-[Djev](https://djev.dev) is a **Maisa** invite-only preview. Your `TYPESAFE_API_KEY` does not work there.
-
-```bash
-python -m jev_master catalog --kind vision
-```
-
-## Field map
-
-382 GitHub/X citations, 2026-09-20. **Links only** — this repo does not clone or submodule them.
-
-```bash
-python -m jev_master catalog                 # all
-python -m jev_master catalog --kind browser  # computer use
-python -m jev_master catalog --kind vision   # images
-python -m jev_master catalog --json          # machine-readable
-```
-
-Kinds: `official` `sdk` `agent` `browser` `vision` `app` `game` `research` `list` `x`
-
-- Table: [`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md)
-- JSON: [`docs/ecosystem.json`](docs/ecosystem.json)
-
-Headline citations: [python SDK](https://github.com/typesafe-ai/typesafe-sdk-python) · [JS SDK](https://github.com/typesafe-ai/typesafe-sdk-js) · [skills](https://github.com/typesafe-ai/skills) · [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) · [djev-dev](https://github.com/Davipar/djev-dev) · [awesome-jev](https://github.com/cobanov/awesome-jev)
-
-TypeSafe: [intro](https://docs.typesafe.ai/introduction) · [API](https://docs.typesafe.ai/api) · [patterns](https://docs.typesafe.ai/patterns)
+Djev is invite-only. A TypeSafe key will 401 there. Full list: `python -m jev_master catalog --kind vision`
 
 ## Secrets
 
@@ -187,14 +157,14 @@ Runtime-only. Do not paste keys into README, tests, issues, or screenshots.
 
 ## Troubleshooting
 
-| Symptom | What to check |
+| Symptom | Check |
 | --- | --- |
-| `TYPESAFE_API_KEY is not set` | Export the env var in **this** shell, then rerun |
-| HTTP 401 | Wrong product: TypeSafe key → `api.typesafe.ai`. Djev needs a `djev_invite_…` code |
-| HTTP 403 / waitlist | Key exists but the TypeSafe account is not enabled yet |
-| `pip install -e .` fails on Windows | Use Python 3.10+; tests still run with `PYTHONPATH=src` (`python -m pytest`) |
-| Browser page empty | Start `python -m jev_master browser` first, then open port 8765 |
-| Want a catalog kind | `--kind` must be one of the kinds listed above |
+| `TYPESAFE_API_KEY is not set` | Set it in **this** shell |
+| HTTP 401 | TypeSafe key → `api.typesafe.ai`. Djev needs `djev_invite_…` |
+| HTTP 403 | Account on the TypeSafe waitlist |
+| `pip install -e .` fails on Windows | Python 3.10+; tests: `PYTHONPATH=src` then `python -m pytest` |
+| Empty browser | Start `browser` first, then port 8765 |
+| Bad `--kind` | Use a kind from the table in **B** |
 
 ## License
 
