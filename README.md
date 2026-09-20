@@ -124,20 +124,33 @@ awesome-jev lists are link directories. **jev-master ships the runnable compose 
 | [hellogumbo/awesome-jev](https://github.com/hellogumbo/awesome-jev) — 400+ directory | Pattern-tagged index in [`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md) |
 | [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) — use-case notes | Intent routing / confidence gate / composite score as launchable apps |
 
-Surveyed from those lists plus official SDKs and X (`@typesafeai`, Browser Use ultrafast, jev-trader, neo4jev roundups). Full JSON: [`docs/ecosystem.json`](docs/ecosystem.json). Print it:
+Surveyed from those lists plus official SDKs, Djev/Maisa vision work, and X (`@typesafeai`, `@davipar`, `@mmastrac`, Browser Use ultrafast). Full JSON: [`docs/ecosystem.json`](docs/ecosystem.json). Print it:
 
 ```bash
 python -m jev_master catalog
 python -m jev_master catalog --kind browser
+python -m jev_master catalog --kind vision
 ```
+
+**TypeSafe Jev does not take images.** On X the official answer is [wait a while](https://x.com/dotpem/status/2101335033609138382). Field workarounds, cited not cloned:
+
+| How | What Jev actually sees | Examples |
+| --- | --- | --- |
+| OCR / caption | Text | [typesafe-computer-use](https://github.com/awlevin/typesafe-computer-use) · [nothotdog](https://github.com/anishsrinivasan/nothotdog) |
+| CV → JSON | Structured scene | [jev-drone](https://github.com/RomanSlack/jev-drone) |
+| Swap the model | Pixels | [djev-dev](https://github.com/Davipar/djev-dev) · [jev_local](https://github.com/Argos1111/jev_local) · [jev-visual](https://github.com/hr98w/jev-visual) |
+| Pixel questions | Text grid (drawing, not seeing) | [typesafe-image-diffusion](https://github.com/Wizhill05/typesafe-image-diffusion) |
+
+Djev ([djev.dev](https://djev.dev)) is **Maisa**, not TypeSafe. Invite-only native vision.
 
 Headline citations (not copied into this tree):
 
 - Official: [typesafe-sdk-python](https://github.com/typesafe-ai/typesafe-sdk-python) · [typesafe-sdk-js](https://github.com/typesafe-ai/typesafe-sdk-js) · [skills](https://github.com/typesafe-ai/skills)
 - Agents: [foreman](https://github.com/thruwire/foreman) · [winnow](https://github.com/GhalebDweikat/winnow) · [hermes-jev](https://github.com/keeltrace/hermes-jev)
 - Browser: [jev-ultrafast](https://github.com/browser-use/jev-ultrafast) · [typesafe-computer-use](https://github.com/awlevin/typesafe-computer-use)
-- Apps: [neo4jev](https://github.com/jexp/neo4jev) · [jev-trader](https://github.com/jarrodwatts/jev-trader) · [killmyidea](https://github.com/monteduro/killmyidea)
-- Research: [openjev](https://github.com/TheoLeeCJ/openjev) · [jev-sec-bench](https://github.com/Gaurav-Gosain/jev-sec-bench)
+- Vision: [djev-dev](https://github.com/Davipar/djev-dev) · [djev-spark](https://github.com/mmastrac/djev-spark) · [PlayJev](https://github.com/OmniJev/PlayJev)
+- Apps: [neo4jev](https://github.com/jexp/neo4jev) · [jev-trader](https://github.com/jarrodwatts/jev-trader) · [classifier-dev](https://github.com/mrmps/classifier-dev)
+- Research: [SemIf](https://github.com/TheoLeeCJ/SemIf) · [jevlike](https://github.com/vinnylarouge/jevlike)
 
 Docs: [Introduction](https://docs.typesafe.ai/introduction) · [API](https://docs.typesafe.ai/api) · [Patterns](https://docs.typesafe.ai/patterns)
 

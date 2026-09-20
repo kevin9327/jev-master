@@ -4,7 +4,7 @@ This file is an index of public Jev / TypeSafe System One work.
 **We do not vendor, mirror, or submodule these repositories.**
 Star counts and trending rank are not claimed.
 
-Surveyed GitHub awesome-jev lists, GitHub search (jev typesafe / openjev / user jev-*), official TypeSafe repos/docs/providers, and X posts about Jev/System One · 331 cited entries · 2026-09-19.
+Surveyed GitHub awesome-jev lists, GitHub search, official TypeSafe + Djev docs, and X posts (image/vision harvest + 2026-09-20 field sweep) · 382 cited entries · 2026-09-20.
 
 Sources we read (still not copied into this tree):
 
@@ -19,6 +19,11 @@ Sources we read (still not copied into this tree):
 - https://github.com/kevin9327/jev-visual
 - https://x.com/CompleteSkeptic/status/2099925682726002904
 - https://github.com/githubnext/localjev
+- https://djev.dev
+- https://github.com/Davipar/djev-dev
+- https://github.com/mmastrac/djev-spark
+- https://x.com/LukeberryPi/status/2101307264829149210
+- https://jevbest.com/
 
 Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 
@@ -77,6 +82,8 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 - [jev-cli (Rust)](https://github.com/shaharia-lab/jev-cli) `client` — Rust CLI for TypeSafe Jev
 - [sqlite-jev](https://github.com/mgaitan/sqlite-jev) `other` — SQLite C extension for Jev judgments
 - [jevkit](https://github.com/ariel-frischer/jevkit) `other` — Rust question linter + caller
+- [n8n-nodes-jev-systemone](https://github.com/withabdul/n8n-nodes-jev-systemone) `client` — n8n classify/score then IF/Switch
+- [typesafe-sdk-ruby (afurm)](https://github.com/afurm/typesafe-sdk-ruby) `client` — Community Ruby TypeSafe client
 
 ## Agents, gates, MCP
 
@@ -149,6 +156,10 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 - [jev (Claude plugin)](https://github.com/BorisLeMeec/jev) `other` — Claude Code plugin for Jev
 - [jev-shield](https://github.com/caiovicentino/jev-shield) `confidence-gate` — MCP semantic firewall
 - [vercel-labs/fx](https://github.com/vercel-labs/fx) `confidence-gate` — typesafe_permission_reviewer using Jev
+- [jevcache](https://github.com/kushals256/jevcache) `other` — Skip duplicate LLM calls when Jev says same intent
+- [jev-s](https://github.com/wuyoscar/jev-s) `other` — Codex/Claude/OpenCode Jev skills bundle
+- [agent-xray](https://github.com/morlex01/agent-xray) `other` — Jev analyzes agent traces into a Fix Pack
+- [jev-pii-guardrail](https://github.com/jms-dcksn/jev-pii-guardrail) `confidence-gate` — PII detect around LLM calls
 
 ## Browser and computer use
 
@@ -176,6 +187,36 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 - [typesafe-adblock](https://github.com/realZachi/typesafe-adblock) `confidence-gate` — Chrome extension: Jev noul is-this-DOM-node-an-ad
 - [jev-macos-loop](https://github.com/jcpsimmons/jev-macos-loop) `intent-routing` — Native Mac clicker loop via Jev
 - [Winnow (ThinkyMiner)](https://github.com/ThinkyMiner/Winnow) `confidence-gate` — Chrome worth-it gate (distinct from GhalebDweikat/winnow)
+- [tiptour-macos](https://github.com/milind-soni/tiptour-macos) `vision` — CoreML segment + on-device OCR + Jev click ~90ms · [X](https://x.com/milindsoni/status/2100631847155994852)
+- [jev-mobile](https://github.com/Friedjof/jev-mobile) `confidence-gate` — USB Android observe/decide/mutate + MCP
+- [otto](https://github.com/NobleSpartan6/otto) `vision` — Native macOS/Windows computer-use: Jev + local OCR
+- [jev-windows-voice](https://github.com/mstf-svndk/jev-windows-voice) `other` — Windows voice control via Jev + UI Automation
+- [jevdroid](https://github.com/antiyro/jevdroid) `other` — Android accessibility tree actions chosen by Jev
+- [jev-turbo](https://github.com/sightmap/jev-turbo) `other` — Semantic browser use; Jev picks named actions
+- [jev-desktop](https://github.com/yikangy873-gif/jev-desktop) `other` — Jev action selection inside Codex Computer Use
+- [jev-social](https://github.com/socai-io/jev-social) `other` — Jev picks browser steps for IG/TikTok/LinkedIn research
+
+## Vision, images, and local eyes
+
+- [Djev playground](https://djev.dev) `vision` — Maisa hosted preview: native images + webcam. Invite-only. Not TypeSafe.
+- [Djev API docs](https://api.djev.dev/docs) `vision` — POST /v1/request with images[]; djev-0.1
+- [djev-dev](https://github.com/Davipar/djev-dev) `vision` — Open DiffusionGemma Jev: images, image-as-options, camera · [X](https://x.com/davipar/status/2101363515663475176)
+- [djev-spark](https://github.com/mmastrac/djev-spark) `vision` — DGX Spark Docker: webcam/hotdog/walk on DiffusionGemma-as-Jev · [X](https://x.com/mmastrac/status/2100984971372740760)
+- [diffgemma](https://github.com/mmastrac/diffgemma) `vision` — Matt Mastracci DiffusionGemma playground (pre-djev) · [X](https://x.com/mmastrac/status/2100655582030262639)
+- [mlx-vlm](https://github.com/jamescorbett/mlx-vlm) `vision` — Apple MLX DiffusionGemma-as-Jev (systemone)
+- [PlayJev](https://github.com/OmniJev/PlayJev) `vision` — 0.8B Qwen: raw game frames → one move
+- [jev_local](https://github.com/Argos1111/jev_local) `vision` — Local /v1/systemone with LFM2.5-VL image array
+- [OpenJev-Vision](https://github.com/IamBusy/OpenJev-Vision) `vision` — DINOv2/CNN: real photos → noul/choice
+- [PocketJev](https://github.com/NullPo-jp/PocketJev) `vision` — iPhone Qwen3-VL camera judgments
+- [jevfire](https://github.com/kikoncuo/jevfire) `vision` — Jev-like inference on any model; accepts images
+- [nothotdog](https://github.com/anishsrinivasan/nothotdog) `vision` — VLM caption then TypeSafe Jev (hotdog) · [X](https://x.com/anishsrinivasan/status/2101306033146847458)
+- [jev-drive](https://github.com/eylexlive/jev-drive) `vision` — Gemini Vision vs sim state; Jev or Gemini drives
+- [jevaluate](https://github.com/ElshinQ/jevaluate) `vision` — Jev picks clicks; DeepSeek reads screenshots for UI bugs
+- [jev-clerk](https://github.com/stas4000/jev-clerk) `vision` — Mac accounting: OCR lines → Jev Choice
+- [dating-booster](https://github.com/cyberpinkman/dating-booster) `vision` — Vision reads UI; Jev judges text · [X](https://x.com/cyberpink_x/status/2101590611010924741)
+- [jev-paint](https://github.com/achimala/jev-paint) `vision` — Per-pixel Score distributions painted (generation, not seeing)
+- [JevPixelArt](https://github.com/rivianpratama/JevPixelArt) `vision` — Jev Score per RGB(A) channel → pixel art
+- [typesafe-image-diffusion](https://github.com/Wizhill05/typesafe-image-diffusion) `vision` — 256 parallel pixel Choices; 16x16 fake diffusion
 
 ## Applications
 
@@ -244,6 +285,12 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 - [worth-replying](https://github.com/AIsa-team/worth-replying) `confidence-gate` — Reply-worthiness gate
 - [Jevons](https://github.com/jevonsdev/Jevons) `other` — Jev-driven buyback/burn on Robinhood Chain
 - [jev-cookbook](https://github.com/nexibeo/jev-cookbook) `other` — TypeSafe Jev recipes on OpenRouter
+- [embodied-jev](https://github.com/FBddcz/embodied-jev) `other` — MuJoCo Franka; Jev or MiniCPM/OpenAI vision
+- [classifier-dev](https://github.com/mrmps/classifier-dev) `intent-routing` — Packed zero-shot text classification via jev-latest
+- [jevlergy](https://github.com/daisuke7/jevlergy) `other` — Allergen detector via Jev
+- [senseek](https://github.com/liou666/senseek) `other` — Cheap semantic find via Jev
+- [mysql-ailike](https://github.com/maayanlevy/mysql-ailike) `other` — MySQL row filter with Jev meaning
+- [jev-latam-lead-triage](https://github.com/integralmarketingmx/jev-latam-lead-triage) `intent-routing` — Spanish WhatsApp/CRM lead triage
 
 ## Games and simulations
 
@@ -276,6 +323,8 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 - [Parsewell](https://github.com/Shurikal/Parsewell) `other` — Batched Jev call per text-adventure move
 - [mario-jev](https://github.com/shantanugoel/mario-jev) `intent-routing` — Mario via Jev
 - [jev-plays-pokemon](https://github.com/milanboers/jev-plays-pokemon) `intent-routing` — Pokemon Red typed questions
+- [river-run-typesafe](https://github.com/ashaazami/river-run-typesafe) `other` — River Raid shooter; Jev picks lane and fire
+- [OneVOneJev](https://github.com/emrickgarrett/OneVOneJev) `other` — 1v1 quickscope arena; Jev vs human
 
 ## Open replicas and evals
 
@@ -331,6 +380,12 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 - [jev-capability-atlas](https://github.com/Zaious/jev-capability-atlas) `other` — Evidence map of where Jev holds or breaks
 - [laya](https://github.com/NandhaKishorM/laya) `other` — Non-AR RLCD decision model
 - [jev-on-a-laptop](https://github.com/rorshopping/jev-on-a-laptop) `other` — Local Jev-like parallel decisions on a laptop
+- [nimble](https://github.com/bespokelabsai/nimble) `other` — Open model matching Jev-ish performance
+- [laya-mlx](https://github.com/mizorewww/laya-mlx) `other` — Local System One on MLX · [X](https://x.com/mizorewww/status/2101473552956555427)
+- [laya-coreml](https://github.com/mizorewww/laya-coreml) `other` — Apple Silicon CoreML System One
+- [poorjev](https://github.com/rupeshpoojary9/poorjev) `other` — Zero-shot NLI Choice/Score/Noul
+- [jev_benchmark](https://github.com/ywchiu/jev_benchmark) `catalog` — Open measured Jev vs others
+- [jev-align](https://github.com/sutro-sh/jev-align) `other` — GEPA: label uncertain examples, improve Jev questions
 
 ## Other directories
 
@@ -379,6 +434,10 @@ Method: public GitHub READMEs + X posts. Inclusion is not TypeSafe affiliation.
 - [TechCrunch Jev](https://x.com/TechCrunch/status/2101022221774856412) `catalog` — Press: cheaper/faster software intelligence
 - [Vercel Developers Jev](https://x.com/vercel_dev/status/2100378959653507175) `client` — evaluate({ model: typesafe-ai/jev })
 - [OpenRouter decision model primer](https://x.com/OpenRouter/status/2101061688338575739) `intent-routing` — Partner primer: yes/no and multiple-choice with confidence
+- [Djev how-to-images thread](https://x.com/LukeberryPi/status/2101307264829149210) `vision` — Canonical X thread: how to make Jev process images
+- [TypeSafe wait-a-while](https://x.com/dotpem/status/2101335033609138382) `vision` — Official TypeSafe: Jev images not yet; wait a while
+- [djev-dev launch](https://x.com/davipar/status/2101363515663475176) `vision` — davipar Djev launch: native image input and image options
+- [mmastrac phone vision](https://x.com/mmastrac/status/2101011110132601054) `vision` — DiffusionGemma-as-Jev live phone vision / stairs
 
 ## What jev-master adds
 

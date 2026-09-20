@@ -20,7 +20,7 @@ def test_catalog_has_many_unique_github_citations() -> None:
     assert any("github.com/" in url for url in urls)
     assert any("x.com/" in url for url in urls)
     kinds = {entry["kind"] for entry in data["entries"]}
-    for required in ("official", "sdk", "agent", "browser", "app", "game", "research", "list", "x"):
+    for required in ("official", "sdk", "agent", "browser", "vision", "app", "game", "research", "list", "x"):
         assert required in kinds
     patterns = {entry.get("pattern") for entry in data["entries"]}
     assert "intent-routing" in patterns
@@ -29,8 +29,12 @@ def test_catalog_has_many_unique_github_citations() -> None:
     # 2026-09-19 harvest: previously missing user repo + new GitHub and X citations
     assert "https://github.com/kevin9327/jev-visual" in urls
     assert "https://github.com/githubnext/localjev" in urls
+    assert "https://github.com/Davipar/djev-dev" in urls
+    assert "https://github.com/mmastrac/djev-spark" in urls
+    assert "https://github.com/Argos1111/jev_local" in urls
     assert "https://x.com/typesafeai/status/2100747035746193598" in urls
     assert "https://x.com/CompleteSkeptic/status/2099925682726002904" in urls
+    assert "https://x.com/LukeberryPi/status/2101307264829149210" in urls
 
 
 def test_catalog_does_not_clone_other_repos() -> None:
@@ -53,5 +57,7 @@ def test_render_markdown_says_cited_not_cloned() -> None:
     assert "POST /v1/systemone" in text or "v1/systemone" in text or "compose" in text
     assert "https://github.com/typesafe-ai/typesafe-sdk-python" in text
     assert "https://github.com/browser-use/jev-ultrafast" in text
+    assert "https://github.com/Davipar/djev-dev" in text
+    assert "Vision, images, and local eyes" in text
     assert "JevBot" in text and "JevHarness" in text and "JevCode" in text
     assert "three compose apps" not in text

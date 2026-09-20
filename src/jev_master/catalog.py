@@ -13,6 +13,7 @@ KINDS = (
     "sdk",
     "agent",
     "browser",
+    "vision",
     "app",
     "game",
     "research",
@@ -27,6 +28,7 @@ PATTERNS = (
     "fan-out",
     "client",
     "catalog",
+    "vision",
     "other",
 )
 
@@ -93,6 +95,7 @@ def render_markdown(data: dict[str, Any] | None = None) -> str:
         "sdk": "SDKs and clients",
         "agent": "Agents, gates, MCP",
         "browser": "Browser and computer use",
+        "vision": "Vision, images, and local eyes",
         "app": "Applications",
         "game": "Games and simulations",
         "research": "Open replicas and evals",
